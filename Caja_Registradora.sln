@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caja_Registradora", "Caja_Registradora.csproj", "{CC4ED0BD-F605-4998-8F09-7A419D89DEFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC4ED0BD-F605-4998-8F09-7A419D89DEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC4ED0BD-F605-4998-8F09-7A419D89DEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC4ED0BD-F605-4998-8F09-7A419D89DEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC4ED0BD-F605-4998-8F09-7A419D89DEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B6F0E08-31F3-4A81-804F-490C0F459891}
+	EndGlobalSection
+EndGlobal
