@@ -22,7 +22,7 @@ namespace Caja_Registradora.Views
 
         }
 
-        public void Ingresar()
+        public static void Ingresar()
         {
 
         }
