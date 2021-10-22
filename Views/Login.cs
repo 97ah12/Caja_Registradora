@@ -21,5 +21,10 @@ namespace Caja_Registradora.Views
         {
 
         }
+
+        public void Ingresar()
+        {
+
+        }
     }
 }
