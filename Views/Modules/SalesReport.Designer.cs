@@ -167,7 +167,7 @@ namespace Caja_Registradora.Views.Modules
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "SalesReport";
-            this.Size = new System.Drawing.Size(716, 597);
+            this.Size = new System.Drawing.Size(718, 595);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
