@@ -81,7 +81,7 @@ namespace Caja_Registradora.Views
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(140, 179);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 15);
+            this.label2.Size = new System.Drawing.Size(84, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "CONTRASEÑA";
             // 
@@ -99,6 +99,7 @@ namespace Caja_Registradora.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(370, 284);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
