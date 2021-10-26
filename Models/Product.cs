@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Caja_Registradora.Models
 {
-    class Product
+    public partial class Product
     {
-        public String Code { get; set;}
-        public String Description{ get; set;}
+        public string Code { get; set;}
+        public string Description{ get; set;}
         public int Quantity { get; set; }
-        public float MyProperty { get; set; }
+        public float Price { get; set; }
     }
 }
