@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Caja_Registradora.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,26 @@ namespace Caja_Registradora.Views.Modules
 {
     public partial class Product : UserControl
     {
+        /* Declaramos obj DTO
+         * Declaramos ProductList
+         */
+        ProductDTO _objDTO;
+        List<Models.Product> _productList;
         public Product()
         {
+            /*Instanciamos el obj DTO y ProductList
+            Llamamos el metodo LoadGrid
+            */
             InitializeComponent();
+            _objDTO = new();
+            _productList = new();
+            LoadGrid();
+        }
+
+        private void LoadGrid()
+        {
+            _productList = _objDTO.GetProductList();
+            dgvProducts.DataSource = _productList;
         }
 
         private void label1_Click(object sender, EventArgs e)

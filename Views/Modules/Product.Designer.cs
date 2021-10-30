@@ -30,7 +30,7 @@ namespace Caja_Registradora.Views.Modules
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.gtgvDatos = new System.Windows.Forms.DataGridView();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@ namespace Caja_Registradora.Views.Modules
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtConsecutivo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.gtgvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -71,27 +71,28 @@ namespace Caja_Registradora.Views.Modules
             this.label1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(932, 25);
+            this.label1.Size = new System.Drawing.Size(816, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "CAJA REGISTRADORA ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // gtgvDatos
+            // dgvProducts
             // 
-            this.gtgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gtgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CODIGO,
             this.DESCRIPCION,
             this.CANTIDAD,
             this.PRECIO});
-            this.gtgvDatos.Location = new System.Drawing.Point(13, 96);
-            this.gtgvDatos.Name = "gtgvDatos";
-            this.gtgvDatos.RowHeadersWidth = 51;
-            this.gtgvDatos.RowTemplate.Height = 29;
-            this.gtgvDatos.Size = new System.Drawing.Size(645, 417);
-            this.gtgvDatos.TabIndex = 2;
-            this.gtgvDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvProducts.Location = new System.Drawing.Point(11, 72);
+            this.dgvProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.RowHeadersWidth = 51;
+            this.dgvProducts.RowTemplate.Height = 29;
+            this.dgvProducts.Size = new System.Drawing.Size(564, 313);
+            this.dgvProducts.TabIndex = 2;
+            this.dgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CODIGO
             // 
@@ -124,9 +125,9 @@ namespace Caja_Registradora.Views.Modules
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 538);
+            this.label4.Location = new System.Drawing.Point(36, 404);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
+            this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "CODIGO";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -134,9 +135,10 @@ namespace Caja_Registradora.Views.Modules
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(13, 629);
+            this.btnCrear.Location = new System.Drawing.Point(11, 472);
+            this.btnCrear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(125, 29);
+            this.btnCrear.Size = new System.Drawing.Size(109, 22);
             this.btnCrear.TabIndex = 4;
             this.btnCrear.Text = "CREAR";
             this.btnCrear.UseVisualStyleBackColor = true;
@@ -144,82 +146,89 @@ namespace Caja_Registradora.Views.Modules
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(13, 580);
+            this.txtCodigo.Location = new System.Drawing.Point(11, 435);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(125, 27);
+            this.txtCodigo.Size = new System.Drawing.Size(110, 23);
             this.txtCodigo.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(194, 538);
+            this.label5.Location = new System.Drawing.Point(170, 404);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 20);
+            this.label5.Size = new System.Drawing.Size(81, 15);
             this.label5.TabIndex = 6;
             this.label5.Text = "DESCRIPCION";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(379, 538);
+            this.label6.Location = new System.Drawing.Point(332, 404);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 20);
+            this.label6.Size = new System.Drawing.Size(65, 15);
             this.label6.TabIndex = 7;
             this.label6.Text = "CANTIDAD";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(546, 538);
+            this.label7.Location = new System.Drawing.Point(478, 404);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 20);
+            this.label7.Size = new System.Drawing.Size(47, 15);
             this.label7.TabIndex = 8;
             this.label7.Text = "PRECIO";
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(517, 580);
+            this.txtPrecio.Location = new System.Drawing.Point(452, 435);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(125, 27);
+            this.txtPrecio.Size = new System.Drawing.Size(110, 23);
             this.txtPrecio.TabIndex = 9;
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(359, 580);
+            this.txtCantidad.Location = new System.Drawing.Point(314, 435);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(125, 27);
+            this.txtCantidad.Size = new System.Drawing.Size(110, 23);
             this.txtCantidad.TabIndex = 10;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(179, 580);
+            this.txtDescripcion.Location = new System.Drawing.Point(157, 435);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(125, 27);
+            this.txtDescripcion.Size = new System.Drawing.Size(110, 23);
             this.txtDescripcion.TabIndex = 11;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(517, 629);
+            this.btnBuscar.Location = new System.Drawing.Point(452, 472);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(125, 29);
+            this.btnBuscar.Size = new System.Drawing.Size(109, 22);
             this.btnBuscar.TabIndex = 12;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(359, 629);
+            this.btnEliminar.Location = new System.Drawing.Point(314, 472);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(125, 29);
+            this.btnEliminar.Size = new System.Drawing.Size(109, 22);
             this.btnEliminar.TabIndex = 13;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(179, 629);
+            this.btnActualizar.Location = new System.Drawing.Point(157, 472);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(125, 29);
+            this.btnActualizar.Size = new System.Drawing.Size(109, 22);
             this.btnActualizar.TabIndex = 14;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -227,59 +236,66 @@ namespace Caja_Registradora.Views.Modules
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(682, 210);
+            this.button5.Location = new System.Drawing.Point(597, 158);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(233, 29);
+            this.button5.Size = new System.Drawing.Size(204, 22);
             this.button5.TabIndex = 15;
             this.button5.Text = "CANTIDAD A VENDER";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(682, 111);
+            this.button6.Location = new System.Drawing.Point(597, 83);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(233, 29);
+            this.button6.Size = new System.Drawing.Size(204, 22);
             this.button6.TabIndex = 16;
             this.button6.Text = "REF. PRODUCTO";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // txtRefProducto
             // 
-            this.txtRefProducto.Location = new System.Drawing.Point(682, 146);
+            this.txtRefProducto.Location = new System.Drawing.Point(597, 110);
+            this.txtRefProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRefProducto.Name = "txtRefProducto";
-            this.txtRefProducto.Size = new System.Drawing.Size(233, 27);
+            this.txtRefProducto.Size = new System.Drawing.Size(204, 23);
             this.txtRefProducto.TabIndex = 17;
             // 
             // txtCantidadaVender
             // 
-            this.txtCantidadaVender.Location = new System.Drawing.Point(682, 245);
+            this.txtCantidadaVender.Location = new System.Drawing.Point(597, 184);
+            this.txtCantidadaVender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantidadaVender.Name = "txtCantidadaVender";
-            this.txtCantidadaVender.Size = new System.Drawing.Size(233, 27);
+            this.txtCantidadaVender.Size = new System.Drawing.Size(204, 23);
             this.txtCantidadaVender.TabIndex = 18;
             // 
             // btnVender
             // 
-            this.btnVender.Location = new System.Drawing.Point(682, 310);
+            this.btnVender.Location = new System.Drawing.Point(597, 232);
+            this.btnVender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(233, 176);
+            this.btnVender.Size = new System.Drawing.Size(204, 132);
             this.btnVender.TabIndex = 19;
             this.btnVender.Text = "VENDER";
             this.btnVender.UseVisualStyleBackColor = true;
             // 
             // btnInformedeVentas
             // 
-            this.btnInformedeVentas.Location = new System.Drawing.Point(19, 26);
+            this.btnInformedeVentas.Location = new System.Drawing.Point(17, 20);
+            this.btnInformedeVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInformedeVentas.Name = "btnInformedeVentas";
-            this.btnInformedeVentas.Size = new System.Drawing.Size(195, 42);
+            this.btnInformedeVentas.Size = new System.Drawing.Size(171, 32);
             this.btnInformedeVentas.TabIndex = 0;
             this.btnInformedeVentas.Text = "INFORME DE VENTAS";
             this.btnInformedeVentas.UseVisualStyleBackColor = true;
             // 
             // btnCierredeCaja
             // 
-            this.btnCierredeCaja.Location = new System.Drawing.Point(19, 74);
+            this.btnCierredeCaja.Location = new System.Drawing.Point(17, 56);
+            this.btnCierredeCaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCierredeCaja.Name = "btnCierredeCaja";
-            this.btnCierredeCaja.Size = new System.Drawing.Size(195, 42);
+            this.btnCierredeCaja.Size = new System.Drawing.Size(171, 32);
             this.btnCierredeCaja.TabIndex = 1;
             this.btnCierredeCaja.Text = "CIERRE DE CAJA";
             this.btnCierredeCaja.UseVisualStyleBackColor = true;
@@ -288,9 +304,11 @@ namespace Caja_Registradora.Views.Modules
             // 
             this.groupBox1.Controls.Add(this.btnCierredeCaja);
             this.groupBox1.Controls.Add(this.btnInformedeVentas);
-            this.groupBox1.Location = new System.Drawing.Point(682, 529);
+            this.groupBox1.Location = new System.Drawing.Point(597, 397);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(233, 129);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(204, 97);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "INFORMES";
@@ -299,9 +317,9 @@ namespace Caja_Registradora.Views.Modules
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 16);
+            this.label2.Location = new System.Drawing.Point(66, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 20);
+            this.label2.Size = new System.Drawing.Size(44, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "FECHA";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -309,24 +327,26 @@ namespace Caja_Registradora.Views.Modules
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(455, 12);
+            this.label3.Location = new System.Drawing.Point(398, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 20);
+            this.label3.Size = new System.Drawing.Size(86, 15);
             this.label3.TabIndex = 1;
             this.label3.Text = "CONSECUTIVO";
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(135, 13);
+            this.txtFecha.Location = new System.Drawing.Point(118, 10);
+            this.txtFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(125, 27);
+            this.txtFecha.Size = new System.Drawing.Size(110, 23);
             this.txtFecha.TabIndex = 2;
             // 
             // txtConsecutivo
             // 
-            this.txtConsecutivo.Location = new System.Drawing.Point(581, 9);
+            this.txtConsecutivo.Location = new System.Drawing.Point(508, 7);
+            this.txtConsecutivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConsecutivo.Name = "txtConsecutivo";
-            this.txtConsecutivo.Size = new System.Drawing.Size(125, 27);
+            this.txtConsecutivo.Size = new System.Drawing.Size(110, 23);
             this.txtConsecutivo.TabIndex = 3;
             // 
             // panel1
@@ -335,14 +355,15 @@ namespace Caja_Registradora.Views.Modules
             this.panel1.Controls.Add(this.txtFecha);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(13, 28);
+            this.panel1.Location = new System.Drawing.Point(11, 21);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(902, 52);
+            this.panel1.Size = new System.Drawing.Size(789, 39);
             this.panel1.TabIndex = 1;
             // 
             // Product
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVender);
@@ -362,12 +383,13 @@ namespace Caja_Registradora.Views.Modules
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.gtgvDatos);
+            this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Product";
-            this.Size = new System.Drawing.Size(932, 681);
-            ((System.ComponentModel.ISupportInitialize)(this.gtgvDatos)).EndInit();
+            this.Size = new System.Drawing.Size(816, 511);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -379,7 +401,7 @@ namespace Caja_Registradora.Views.Modules
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView gtgvDatos;
+        private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIPCION;
         private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDAD;

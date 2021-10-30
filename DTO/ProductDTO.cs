@@ -19,6 +19,7 @@ namespace Caja_Registradora.DTO
         {
             //Instanciando clase DAO
             _objDAO = new();
+            _productList = new();
         }
 
         public bool CreateProduct(Product product)
@@ -37,5 +38,11 @@ namespace Caja_Registradora.DTO
             }
         }
 
+        public List<Product> GetProductList()
+        {
+            _productList = _objDAO.GetProductList();
+            return _productList;
+
+        }
     }
 }
