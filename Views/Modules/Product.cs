@@ -1,4 +1,5 @@
 ﻿using Caja_Registradora.DTO;
+using Caja_Registradora.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +40,6 @@ namespace Caja_Registradora.Views.Modules
         {
 
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -66,6 +66,36 @@ namespace Caja_Registradora.Views.Modules
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
+        {
+            CreateProduct();
+        }
+
+        private void CreateProduct()
+        {
+            try
+            {
+                Models.Product product = new Models.Product()
+                {
+                    Code = txtCodigo.Text,
+                    Price = float.Parse(txtPrecio.Text),
+                    Quantity = int.Parse(txtPrecio.Text),
+                    Description = txtDescripcion.Text
+                };
+                bool createProductResponse = _objDTO.CreateProduct(product);
+                if (createProductResponse)
+                {
+                    MessageHelper.ShowMessage("Producto creado satisfactoriamente");
+                }
+                else
+                    MessageHelper.ShowErrorMessage("El producto no se creó, por alguna razón");
+            }
+            catch (Exception ex)
+            {
+                MessageHelper.ShowErrorMessage(ex.Message);
+            }
+        }
+        
+        private void txtFecha_TextChanged(object sender, EventArgs e)
         {
 
         }

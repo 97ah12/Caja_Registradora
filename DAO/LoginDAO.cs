@@ -10,7 +10,7 @@ namespace Caja_Registradora.DAO
     public class LoginDAO
     {
         readonly User _user;
-        //Este es el contruector de la Clase DAO que instancia los datos por defecro de inicio de sesion.
+        //Este es el contructor de la Clase DAO que instancia los datos por defecro de inicio de sesion.
         public LoginDAO()
         {
             // Esto simula un usuario y contraseña registardo desde la Base de Datos

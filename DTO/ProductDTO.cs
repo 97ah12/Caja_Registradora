@@ -42,7 +42,6 @@ namespace Caja_Registradora.DTO
         {
             _productList = _objDAO.GetProductList();
             return _productList;
-
         }
     }
 }

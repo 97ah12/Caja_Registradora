@@ -35,8 +35,7 @@ namespace Caja_Registradora.Views
                     Password = txtContrasena.Text
                 };
                 bool IsCorrect = _loginDTO.LoginUser(user);
-                if (IsCorrect)
-                {
+                if (IsCorrect){
                     Main main = new();
                     MessageHelper.ShowMessage("Bienvenido a Caja Registradora");
                     user.IsLoggedIn = true;
