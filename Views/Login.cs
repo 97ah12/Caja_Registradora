@@ -38,8 +38,9 @@ namespace Caja_Registradora.Views
                 if (IsCorrect){
                     Main main = new();
                     MessageHelper.ShowMessage("Bienvenido a Caja Registradora");
+                    Hide();
                     user.IsLoggedIn = true;
-                    main.Show();
+                    main.ShowDialog();
                     Close();
                 }
                 else

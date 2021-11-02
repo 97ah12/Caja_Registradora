@@ -29,12 +29,64 @@ namespace Caja_Registradora.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.menuPanel = new System.Windows.Forms.Panel();
+            this.productButton = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.menuPanel.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.menuPanel.Controls.Add(this.productButton);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(200, 450);
+            this.menuPanel.TabIndex = 0;
+            // 
+            // productButton
+            // 
+            this.productButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.productButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.productButton.Location = new System.Drawing.Point(6, 118);
+            this.productButton.Name = "productButton";
+            this.productButton.Size = new System.Drawing.Size(191, 32);
+            this.productButton.TabIndex = 0;
+            this.productButton.Text = "Productos";
+            this.productButton.UseVisualStyleBackColor = true;
+            this.productButton.Click += new System.EventHandler(this.ProductButton_Click);
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.AutoSize = true;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(200, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(600, 450);
+            this.mainPanel.TabIndex = 1;
+            // 
+            // Main
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.menuPanel);
+            this.Name = "Main";
             this.Text = "Main";
+            this.menuPanel.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel menuPanel;
+        private System.Windows.Forms.Button productButton;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }

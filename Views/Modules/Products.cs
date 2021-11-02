@@ -1,5 +1,6 @@
 ﻿using Caja_Registradora.DTO;
 using Caja_Registradora.Helpers;
+using Caja_Registradora.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,14 +13,14 @@ using System.Windows.Forms;
 
 namespace Caja_Registradora.Views.Modules
 {
-    public partial class Product : UserControl
+    public partial class Products : UserControl
     {
         /* Declaramos obj DTO
          * Declaramos ProductList
          */
         ProductDTO _objDTO;
         List<Models.Product> _productList;
-        public Product()
+        public Products()
         {
             /*Instanciamos el obj DTO y ProductList
             Llamamos el metodo LoadGrid
@@ -33,39 +34,11 @@ namespace Caja_Registradora.Views.Modules
         private void LoadGrid()
         {
             _productList = _objDTO.GetProductList();
-            dgvProducts.DataSource = _productList;
+            var list = new BindingList<Product>(_productList);
+            dgvProducts.DataSource = list;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCrear_Click(object sender, EventArgs e)
+        private void BtnCrear_Click(object sender, EventArgs e)
         {
             CreateProduct();
         }
@@ -74,17 +47,18 @@ namespace Caja_Registradora.Views.Modules
         {
             try
             {
-                Models.Product product = new Models.Product()
+                Product product = new()
                 {
                     Code = txtCodigo.Text,
                     Price = float.Parse(txtPrecio.Text),
-                    Quantity = int.Parse(txtPrecio.Text),
+                    Quantity = int.Parse(txtCantidad.Text),
                     Description = txtDescripcion.Text
                 };
                 bool createProductResponse = _objDTO.CreateProduct(product);
                 if (createProductResponse)
                 {
                     MessageHelper.ShowMessage("Producto creado satisfactoriamente");
+                    LoadGrid();
                 }
                 else
                     MessageHelper.ShowErrorMessage("El producto no se creó, por alguna razón");
@@ -94,10 +68,11 @@ namespace Caja_Registradora.Views.Modules
                 MessageHelper.ShowErrorMessage(ex.Message);
             }
         }
-        
-        private void txtFecha_TextChanged(object sender, EventArgs e)
-        {
 
+        private void Products_Load(object sender, EventArgs e)
+        {
+            txtFecha.Text = DateTime.Now.ToShortDateString();
+            Dock = DockStyle.Fill;
         }
     }
 }
