@@ -4,22 +4,17 @@ using Caja_Registradora.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Caja_Registradora.Views.Modules
 {
     public partial class Products : UserControl
     {
-        /* Declaramos obj DTO
+        /* Declaramos obj DTO y lo ponemos readOnly ya que su instancia solo se creara desde el Constructos de Products
          * Declaramos ProductList
          */
-        ProductDTO _objDTO;
-        List<Models.Product> _productList;
+        readonly ProductDTO _objDTO;
+        List<Product> _productList;
         public Products()
         {
             /*Instanciamos el obj DTO y ProductList
@@ -36,6 +31,9 @@ namespace Caja_Registradora.Views.Modules
             _productList = _objDTO.GetProductList();
             var list = new BindingList<Product>(_productList);
             dgvProducts.DataSource = list;
+            int code = _productList.Count + 1;
+            txtCodigo.Text = Convert.ToString(code);
+            txtConsecutivo.Text = txtCodigo.Text;
         }
 
         private void BtnCrear_Click(object sender, EventArgs e)
@@ -58,6 +56,7 @@ namespace Caja_Registradora.Views.Modules
                 if (createProductResponse)
                 {
                     MessageHelper.ShowMessage("Producto creado satisfactoriamente");
+                    ClearFields();
                     LoadGrid();
                 }
                 else
@@ -69,10 +68,32 @@ namespace Caja_Registradora.Views.Modules
             }
         }
 
+        private void ClearFields()
+        {
+            txtDescripcion.Text = "";
+            txtCantidad.Text = "";
+            txtPrecio.Text = "";
+        }
+
         private void Products_Load(object sender, EventArgs e)
         {
             txtFecha.Text = DateTime.Now.ToShortDateString();
+            txtCodigo.Enabled = false;
             Dock = DockStyle.Fill;
+        }
+
+        private void BtnVender_Click(object sender, EventArgs e)
+        {
+            RegisterSale();
+        }
+
+        private void RegisterSale()
+        {
+            Sale sale = new()
+            {
+                ProductCode = int.Parse(txtRefProducto.Text),
+                Quantity = int.Parse(txtCantidadaVender.Text),
+            };
         }
     }
 }

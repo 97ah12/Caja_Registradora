@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Caja_Registradora.Models
+﻿namespace Caja_Registradora.Models
 {
     public partial class User
     {

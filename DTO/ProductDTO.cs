@@ -1,10 +1,6 @@
 ﻿using Caja_Registradora.DAO;
 using Caja_Registradora.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Caja_Registradora.DTO
 {
@@ -29,7 +25,7 @@ namespace Caja_Registradora.DTO
             /*Verifica dentro de la lista que no contenga en producto enviado, Si no lo contiene permitira
             guardarlo en la lista de la Clase DAO y retorna TRUE d elo contrario retorna FALSE
             */
-            if(_productList.Contains(product))
+            if (_productList.Contains(product))
                 return false;
             else
             {

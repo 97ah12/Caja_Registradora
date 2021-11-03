@@ -1,9 +1,4 @@
 ﻿using Caja_Registradora.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Caja_Registradora.DAO
 {
@@ -14,7 +9,7 @@ namespace Caja_Registradora.DAO
         public LoginDAO()
         {
             // Esto simula un usuario y contraseña registardo desde la Base de Datos
-            _user = new() 
+            _user = new()
             {
                 UserName = "Admin",
                 Password = "1234*"

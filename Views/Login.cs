@@ -1,15 +1,7 @@
-﻿using Caja_Registradora.DAO;
-using Caja_Registradora.DTO;
+﻿using Caja_Registradora.DTO;
 using Caja_Registradora.Helpers;
 using Caja_Registradora.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Caja_Registradora.Views
@@ -35,7 +27,8 @@ namespace Caja_Registradora.Views
                     Password = txtContrasena.Text
                 };
                 bool IsCorrect = _loginDTO.LoginUser(user);
-                if (IsCorrect){
+                if (IsCorrect)
+                {
                     Main main = new();
                     MessageHelper.ShowMessage("Bienvenido a Caja Registradora");
                     Hide();
@@ -59,4 +52,3 @@ namespace Caja_Registradora.Views
         }
     }
 }
- 

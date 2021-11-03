@@ -143,7 +143,8 @@ namespace Caja_Registradora.Views.Modules
             // 
             // btnVender
             // 
-            this.btnVender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVender.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVender.Location = new System.Drawing.Point(597, 232);
             this.btnVender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVender.Name = "btnVender";
@@ -151,6 +152,7 @@ namespace Caja_Registradora.Views.Modules
             this.btnVender.TabIndex = 19;
             this.btnVender.Text = "VENDER";
             this.btnVender.UseVisualStyleBackColor = true;
+            this.btnVender.Click += new System.EventHandler(this.BtnVender_Click);
             // 
             // btnInformedeVentas
             // 
@@ -215,11 +217,13 @@ namespace Caja_Registradora.Views.Modules
             // 
             // txtConsecutivo
             // 
+            this.txtConsecutivo.Enabled = false;
             this.txtConsecutivo.Location = new System.Drawing.Point(664, 4);
             this.txtConsecutivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConsecutivo.Name = "txtConsecutivo";
             this.txtConsecutivo.Size = new System.Drawing.Size(110, 23);
-            this.txtConsecutivo.TabIndex = 3;
+            this.txtConsecutivo.TabIndex = 107;
+            this.txtConsecutivo.TabStop = false;
             // 
             // panelHeader
             // 
@@ -273,7 +277,7 @@ namespace Caja_Registradora.Views.Modules
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(110, 23);
-            this.txtDescripcion.TabIndex = 109;
+            this.txtDescripcion.TabIndex = 1;
             // 
             // txtCantidad
             // 
@@ -282,7 +286,7 @@ namespace Caja_Registradora.Views.Modules
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(110, 23);
-            this.txtCantidad.TabIndex = 108;
+            this.txtCantidad.TabIndex = 2;
             // 
             // txtPrecio
             // 
@@ -291,7 +295,7 @@ namespace Caja_Registradora.Views.Modules
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(110, 23);
-            this.txtPrecio.TabIndex = 102;
+            this.txtPrecio.TabIndex = 3;
             // 
             // label7
             // 
@@ -331,6 +335,7 @@ namespace Caja_Registradora.Views.Modules
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(110, 23);
             this.txtCodigo.TabIndex = 104;
+            this.txtCodigo.TabStop = false;
             // 
             // btnCrear
             // 
@@ -339,7 +344,7 @@ namespace Caja_Registradora.Views.Modules
             this.btnCrear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(109, 22);
-            this.btnCrear.TabIndex = 103;
+            this.btnCrear.TabIndex = 4;
             this.btnCrear.Text = "CREAR";
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.BtnCrear_Click);

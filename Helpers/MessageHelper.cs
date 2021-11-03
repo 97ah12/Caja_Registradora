@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Caja_Registradora.Helpers
 {
@@ -16,7 +11,7 @@ namespace Caja_Registradora.Helpers
 
         public static void ShowErrorMessage(string ex)
         {
-            MessageBox.Show(ex,"Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            MessageBox.Show(ex, "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
         }
     }
 }

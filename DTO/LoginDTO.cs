@@ -1,10 +1,5 @@
 ﻿using Caja_Registradora.DAO;
 using Caja_Registradora.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Caja_Registradora.DTO
 {
@@ -13,8 +8,8 @@ namespace Caja_Registradora.DTO
         //Declaracion de clase DAO y el modelo user
         readonly LoginDAO _objDAO;
         User _user;
-        
-        
+
+
         //Constructor
         public LoginDTO()
         {
