@@ -13,7 +13,7 @@ namespace Caja_Registradora.DTO
         //constructor
         public ProductDTO()
         {
-            //Instanciando clase DAO
+            //Instanciando clase DAO y _prodcutList
             _objDAO = new();
             _productList = new();
         }

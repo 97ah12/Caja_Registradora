@@ -16,7 +16,7 @@ namespace Caja_Registradora.Views
             _loginDTO = new();
         }
 
-        public void Ingresar()
+        private void Ingresar()
         {
             try
             {
