@@ -31,9 +31,6 @@ namespace Caja_Registradora.Views.Modules
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.txtRefProducto = new System.Windows.Forms.TextBox();
             this.txtCantidadaVender = new System.Windows.Forms.TextBox();
             this.btnVender = new System.Windows.Forms.Button();
             this.btnInformedeVentas = new System.Windows.Forms.Button();
@@ -57,6 +54,9 @@ namespace Caja_Registradora.Views.Modules
             this.btnCrear = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboProducts = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -69,7 +69,7 @@ namespace Caja_Registradora.Views.Modules
             this.label1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(816, 19);
+            this.label1.Size = new System.Drawing.Size(803, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "CAJA REGISTRADORA ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,7 +84,7 @@ namespace Caja_Registradora.Views.Modules
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Location = new System.Drawing.Point(11, 72);
@@ -92,63 +92,35 @@ namespace Caja_Registradora.Views.Modules
             this.dgvProducts.MultiSelect = false;
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
-            this.dgvProducts.RowHeadersWidth = 51;
+            this.dgvProducts.RowHeadersVisible = false;
+            this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvProducts.RowTemplate.Height = 29;
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducts.ShowEditingIcon = false;
             this.dgvProducts.ShowRowErrors = false;
-            this.dgvProducts.Size = new System.Drawing.Size(564, 313);
+            this.dgvProducts.Size = new System.Drawing.Size(551, 189);
             this.dgvProducts.TabIndex = 100;
             this.dgvProducts.TabStop = false;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(597, 158);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(204, 22);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "CANTIDAD A VENDER";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(597, 83);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(204, 22);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "REF. PRODUCTO";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // txtRefProducto
-            // 
-            this.txtRefProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRefProducto.Location = new System.Drawing.Point(597, 110);
-            this.txtRefProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtRefProducto.Name = "txtRefProducto";
-            this.txtRefProducto.Size = new System.Drawing.Size(204, 23);
-            this.txtRefProducto.TabIndex = 17;
             // 
             // txtCantidadaVender
             // 
             this.txtCantidadaVender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCantidadaVender.Location = new System.Drawing.Point(597, 184);
-            this.txtCantidadaVender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCantidadaVender.Location = new System.Drawing.Point(587, 163);
             this.txtCantidadaVender.Name = "txtCantidadaVender";
             this.txtCantidadaVender.Size = new System.Drawing.Size(204, 23);
             this.txtCantidadaVender.TabIndex = 18;
+            this.txtCantidadaVender.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCantidadaVender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadaVender_KeyPress);
             // 
             // btnVender
             // 
             this.btnVender.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVender.Location = new System.Drawing.Point(597, 232);
+            this.btnVender.AutoSize = true;
+            this.btnVender.Location = new System.Drawing.Point(587, 208);
             this.btnVender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(204, 132);
+            this.btnVender.Size = new System.Drawing.Size(204, 25);
             this.btnVender.TabIndex = 19;
             this.btnVender.Text = "VENDER";
             this.btnVender.UseVisualStyleBackColor = true;
@@ -163,6 +135,7 @@ namespace Caja_Registradora.Views.Modules
             this.btnInformedeVentas.TabIndex = 0;
             this.btnInformedeVentas.Text = "INFORME DE VENTAS";
             this.btnInformedeVentas.UseVisualStyleBackColor = true;
+            this.btnInformedeVentas.Click += new System.EventHandler(this.BtnInformedeVentas_Click);
             // 
             // btnCierredeCaja
             // 
@@ -179,7 +152,7 @@ namespace Caja_Registradora.Views.Modules
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnCierredeCaja);
             this.groupBox1.Controls.Add(this.btnInformedeVentas);
-            this.groupBox1.Location = new System.Drawing.Point(597, 397);
+            this.groupBox1.Location = new System.Drawing.Point(596, 284);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -287,6 +260,8 @@ namespace Caja_Registradora.Views.Modules
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(110, 23);
             this.txtCantidad.TabIndex = 2;
+            this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadaVender_KeyPress);
             // 
             // txtPrecio
             // 
@@ -296,6 +271,8 @@ namespace Caja_Registradora.Views.Modules
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(110, 23);
             this.txtPrecio.TabIndex = 3;
+            this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadaVender_KeyPress);
             // 
             // label7
             // 
@@ -375,10 +352,39 @@ namespace Caja_Registradora.Views.Modules
             this.panel1.Controls.Add(this.txtCantidad);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtPrecio);
-            this.panel1.Location = new System.Drawing.Point(11, 404);
+            this.panel1.Location = new System.Drawing.Point(10, 277);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(580, 104);
             this.panel1.TabIndex = 113;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(644, 72);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 15);
+            this.label8.TabIndex = 114;
+            this.label8.Text = "Producto a Vender";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(645, 146);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(103, 15);
+            this.label9.TabIndex = 115;
+            this.label9.Text = "Cantidad de Venta";
+            // 
+            // comboProducts
+            // 
+            this.comboProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboProducts.FormattingEnabled = true;
+            this.comboProducts.Location = new System.Drawing.Point(587, 102);
+            this.comboProducts.Name = "comboProducts";
+            this.comboProducts.Size = new System.Drawing.Size(204, 23);
+            this.comboProducts.TabIndex = 116;
             // 
             // Products
             // 
@@ -387,19 +393,18 @@ namespace Caja_Registradora.Views.Modules
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.Controls.Add(this.comboProducts);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.txtCantidadaVender);
-            this.Controls.Add(this.txtRefProducto);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Products";
-            this.Size = new System.Drawing.Size(816, 511);
+            this.Size = new System.Drawing.Size(803, 384);
             this.Load += new System.EventHandler(this.Products_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -416,9 +421,6 @@ namespace Caja_Registradora.Views.Modules
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvProducts;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox txtRefProducto;
         private System.Windows.Forms.TextBox txtCantidadaVender;
         private System.Windows.Forms.Button btnVender;
         private System.Windows.Forms.Button btnCierredeCaja;
@@ -442,5 +444,8 @@ namespace Caja_Registradora.Views.Modules
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboProducts;
     }
 }

@@ -32,6 +32,11 @@ namespace Caja_Registradora.DAO
             //Llamamos método WriteOnFile en _salesList para que la muestre serializada
             WriteOnFile(_salesList);
         }
+        public List<Sale> GetSales()
+        {
+            FillSalesList();
+            return _salesList;
+        }
         //Creamos método FillSalesList para leer nuestros archivos de Texto en Products.Json
 
         private void FillSalesList()
@@ -66,7 +71,6 @@ namespace Caja_Registradora.DAO
             { 
                 //Se cierra la escritura del archivo
                 writer.Close();
-            }
         }
             
     }

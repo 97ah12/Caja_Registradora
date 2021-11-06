@@ -32,12 +32,14 @@ namespace Caja_Registradora.Views
             this.menuPanel = new System.Windows.Forms.Panel();
             this.productButton = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.buttonSales = new System.Windows.Forms.Button();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.menuPanel.Controls.Add(this.buttonSales);
             this.menuPanel.Controls.Add(this.productButton);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
@@ -66,6 +68,18 @@ namespace Caja_Registradora.Views
             this.mainPanel.Size = new System.Drawing.Size(600, 450);
             this.mainPanel.TabIndex = 1;
             // 
+            // buttonSales
+            // 
+            this.buttonSales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSales.Location = new System.Drawing.Point(6, 170);
+            this.buttonSales.Name = "buttonSales";
+            this.buttonSales.Size = new System.Drawing.Size(191, 32);
+            this.buttonSales.TabIndex = 1;
+            this.buttonSales.Text = "Ventas";
+            this.buttonSales.UseVisualStyleBackColor = true;
+            this.buttonSales.Click += new System.EventHandler(this.ButtonSales_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -88,5 +102,6 @@ namespace Caja_Registradora.Views
         private System.Windows.Forms.Panel menuPanel;
         private System.Windows.Forms.Button productButton;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Button buttonSales;
     }
 }

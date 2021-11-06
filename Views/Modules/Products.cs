@@ -14,6 +14,7 @@ namespace Caja_Registradora.Views.Modules
          * Declaramos ProductList
          */
         readonly ProductDTO _objDTO;
+        SaleDTO _saleDTO;
         List<Product> _productList;
         public Products()
         {
@@ -22,25 +23,28 @@ namespace Caja_Registradora.Views.Modules
             */
             InitializeComponent();
             _objDTO = new();
+            _saleDTO = new();
             _productList = new();
             LoadGrid();
         }
 
+        #region Methods
+
         private void LoadGrid()
         {
+            //
             _productList = _objDTO.GetProductList();
             var list = new BindingList<Product>(_productList);
             dgvProducts.DataSource = list;
+            //
             int code = _productList.Count + 1;
             txtCodigo.Text = Convert.ToString(code);
             txtConsecutivo.Text = txtCodigo.Text;
+            //
+            comboProducts.DataSource = _productList;
+            comboProducts.DisplayMember = "Description";
+            comboProducts.ValueMember = "Code";
         }
-
-        private void BtnCrear_Click(object sender, EventArgs e)
-        {
-            CreateProduct();
-        }
-
         private void CreateProduct()
         {
             try
@@ -74,6 +78,25 @@ namespace Caja_Registradora.Views.Modules
             txtCantidad.Text = "";
             txtPrecio.Text = "";
         }
+        private void RegisterSale()
+        {
+            Sale sale = new()
+            {
+                ProductCode = comboProducts.SelectedValue.ToString(),
+                Quantity = int.Parse(txtCantidadaVender.Text),
+            };
+            Sale saleResponse = _saleDTO.SaleProduct(sale);
+            if (saleResponse.IsCorrect)
+            {
+                MessageHelper.ShowMessage($"Venta registrada Correctamente total a pagar {sale.TotalSale}");
+            }
+            else
+                MessageHelper.ShowErrorMessage("La venta no puede completarse la cantidad de productos no es Suficiente");
+        } 
+   
+        #endregion
+
+        #region Events
 
         private void Products_Load(object sender, EventArgs e)
         {
@@ -87,13 +110,30 @@ namespace Caja_Registradora.Views.Modules
             RegisterSale();
         }
 
-        private void RegisterSale()
+        private void BtnCrear_Click(object sender, EventArgs e)
         {
-            Sale sale = new()
+            CreateProduct();
+        }
+
+        // Evento Key Press para identificar cuando se presiona una tecla en este Combo se hace para Validar que solo se ingresen datos numericos 
+        private void txtCantidadaVender_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifico si la tecla presionada no sea control o algun digito Numerico
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                ProductCode = int.Parse(txtRefProducto.Text),
-                Quantity = int.Parse(txtCantidadaVender.Text),
-            };
+                e.Handled = true;
+            }
+            // Aca permito los Numero flotantes y decimales
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
+
+        private void BtnInformedeVentas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
