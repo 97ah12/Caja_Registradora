@@ -65,7 +65,6 @@ namespace Caja_Registradora.DAO
             }
                 //Se cierra la escritura del archivo
                 writer.Close();
-            }
         }
     }
 }

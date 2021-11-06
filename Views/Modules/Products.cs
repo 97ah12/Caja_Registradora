@@ -26,21 +26,23 @@ namespace Caja_Registradora.Views.Modules
             LoadGrid();
         }
 
+        #region Methods
+
         private void LoadGrid()
         {
+            //
             _productList = _objDTO.GetProductList();
             var list = new BindingList<Product>(_productList);
             dgvProducts.DataSource = list;
+            //
             int code = _productList.Count + 1;
             txtCodigo.Text = Convert.ToString(code);
             txtConsecutivo.Text = txtCodigo.Text;
+            //
+            comboProducts.DataSource = _productList;
+            comboProducts.DisplayMember = "Description";
+            comboProducts.ValueMember = "Code";
         }
-
-        private void BtnCrear_Click(object sender, EventArgs e)
-        {
-            CreateProduct();
-        }
-
         private void CreateProduct()
         {
             try
@@ -74,6 +76,18 @@ namespace Caja_Registradora.Views.Modules
             txtCantidad.Text = "";
             txtPrecio.Text = "";
         }
+        private void RegisterSale()
+        {
+            Sale sale = new()
+            {
+                ProductCode = int.Parse(comboProducts.SelectedValue.ToString()),
+                Quantity = int.Parse(txtCantidadaVender.Text),
+            };
+        } 
+   
+        #endregion
+
+        #region Events
 
         private void Products_Load(object sender, EventArgs e)
         {
@@ -87,13 +101,25 @@ namespace Caja_Registradora.Views.Modules
             RegisterSale();
         }
 
-        private void RegisterSale()
+        private void BtnCrear_Click(object sender, EventArgs e)
         {
-            Sale sale = new()
-            {
-                ProductCode = int.Parse(txtRefProducto.Text),
-                Quantity = int.Parse(txtCantidadaVender.Text),
-            };
+            CreateProduct();
         }
+
+        // Evento Key Press para identificar cuando se presiona una tecla en este Combo se hace para Validar que solo se ingresen datos numericos 
+        private void txtCantidadaVender_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifico si la tecla presionada no sea control o algun digito Numerico
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // Aca permito los Numero flotantes y decimales
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        } 
+        #endregion
     }
 }
