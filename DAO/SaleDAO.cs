@@ -63,9 +63,13 @@ namespace Caja_Registradora.DAO
                 //Aqui la lista se pasa a texto (string)
                 writer.WriteLine(serializedProduct);
             }
+            { 
                 //Se cierra la escritura del archivo
                 writer.Close();
             }
         }
+            
     }
 }
+
+
