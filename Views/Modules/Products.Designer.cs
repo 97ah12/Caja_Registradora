@@ -84,7 +84,7 @@ namespace Caja_Registradora.Views.Modules
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Location = new System.Drawing.Point(11, 72);
@@ -92,7 +92,8 @@ namespace Caja_Registradora.Views.Modules
             this.dgvProducts.MultiSelect = false;
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
-            this.dgvProducts.RowHeadersWidth = 51;
+            this.dgvProducts.RowHeadersVisible = false;
+            this.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvProducts.RowTemplate.Height = 29;
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducts.ShowEditingIcon = false;
@@ -134,6 +135,7 @@ namespace Caja_Registradora.Views.Modules
             this.btnInformedeVentas.TabIndex = 0;
             this.btnInformedeVentas.Text = "INFORME DE VENTAS";
             this.btnInformedeVentas.UseVisualStyleBackColor = true;
+            this.btnInformedeVentas.Click += new System.EventHandler(this.BtnInformedeVentas_Click);
             // 
             // btnCierredeCaja
             // 

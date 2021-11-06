@@ -14,6 +14,7 @@ namespace Caja_Registradora.Views.Modules
          * Declaramos ProductList
          */
         readonly ProductDTO _objDTO;
+        SaleDTO _saleDTO;
         List<Product> _productList;
         public Products()
         {
@@ -22,6 +23,7 @@ namespace Caja_Registradora.Views.Modules
             */
             InitializeComponent();
             _objDTO = new();
+            _saleDTO = new();
             _productList = new();
             LoadGrid();
         }
@@ -80,9 +82,16 @@ namespace Caja_Registradora.Views.Modules
         {
             Sale sale = new()
             {
-                ProductCode = int.Parse(comboProducts.SelectedValue.ToString()),
+                ProductCode = comboProducts.SelectedValue.ToString(),
                 Quantity = int.Parse(txtCantidadaVender.Text),
             };
+            Sale saleResponse = _saleDTO.SaleProduct(sale);
+            if (saleResponse.IsCorrect)
+            {
+                MessageHelper.ShowMessage($"Venta registrada Correctamente total a pagar {sale.TotalSale}");
+            }
+            else
+                MessageHelper.ShowErrorMessage("La venta no puede completarse la cantidad de productos no es Suficiente");
         } 
    
         #endregion
@@ -119,7 +128,12 @@ namespace Caja_Registradora.Views.Modules
             {
                 e.Handled = true;
             }
-        } 
+        }
         #endregion
+
+        private void BtnInformedeVentas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

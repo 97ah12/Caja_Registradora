@@ -25,5 +25,11 @@ namespace Caja_Registradora.Views
                 mainPanel.Controls.Add(control);
             }
         }
+
+        private void ButtonSales_Click(object sender, EventArgs e)
+        {
+            SalesReport salesReport = new();
+            OpenModule(salesReport);
+        }
     }
 }
