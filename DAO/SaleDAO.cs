@@ -32,6 +32,7 @@ namespace Caja_Registradora.DAO
             //Llamamos método WriteOnFile en _salesList para que la muestre serializada
             WriteOnFile(_salesList);
         }
+
         public List<Sale> GetSales()
         {
             FillSalesList();
@@ -67,12 +68,10 @@ namespace Caja_Registradora.DAO
                 var serializedProduct = JsonConvert.SerializeObject(sales);
                 //Aqui la lista se pasa a texto (string)
                 writer.WriteLine(serializedProduct);
-            }
-            { 
                 //Se cierra la escritura del archivo
                 writer.Close();
+            }
         }
-            
     }
 }
 
