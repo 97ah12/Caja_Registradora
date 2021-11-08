@@ -12,6 +12,7 @@ namespace Caja_Registradora.Models
         public string ProductCode { get; set; }
         public int Quantity { get; set; }
         public float TotalSale { get; set; }
+        public DateTime SaleDate { get; set; }
         public bool IsCorrect { get; set; }
     }
 }

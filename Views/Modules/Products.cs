@@ -79,6 +79,7 @@ namespace Caja_Registradora.Views.Modules
             txtDescripcion.Text = "";
             txtCantidad.Text = "";
             txtPrecio.Text = "";
+            txtCodigo.Text = txtConsecutivo.Text;
         }
         private void RegisterSale()
         {
@@ -86,6 +87,7 @@ namespace Caja_Registradora.Views.Modules
             {
                 ProductCode = comboProducts.SelectedValue.ToString(),
                 Quantity = int.Parse(txtCantidadaVender.Text),
+                SaleDate = DateTime.Now
             };
             Sale saleResponse = _saleDTO.SaleProduct(sale);
             if (saleResponse.IsCorrect)
@@ -105,6 +107,7 @@ namespace Caja_Registradora.Views.Modules
             txtFecha.Text = DateTime.Now.ToShortDateString();
             txtCodigo.Enabled = false;
             Dock = DockStyle.Fill;
+            btnActualizar.Enabled = false;
         }
 
         private void BtnVender_Click(object sender, EventArgs e)
@@ -141,12 +144,45 @@ namespace Caja_Registradora.Views.Modules
         private void DgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string productCode = dgvProducts.SelectedRows[0].Cells[0].Value.ToString();
+            FillProductInfo(productCode);
+        }
+
+        private void FillProductInfo(string productCode)
+        {
             _product = _objDTO.GetProductByCode(productCode);
             txtCodigo.Text = _product.Code;
             txtDescripcion.Text = _product.Description;
             txtPrecio.Text = Convert.ToString(_product.Price);
             txtCantidad.Text = Convert.ToString(_product.Quantity);
+            btnActualizar.Enabled = true;
             btnCrear.Enabled = false;
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            txtCodigo.Text = txtConsecutivo.Text;
+            txtDescripcion.Text = string.Empty;
+            txtPrecio.Text = string.Empty;
+            txtCantidad.Text = string.Empty;
+            btnCrear.Enabled = true;
+            btnActualizar.Enabled = false;
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            string productCode = txtCodigo.Text;
+            UpdateSelectedProduct(productCode);
+        }
+
+        private void UpdateSelectedProduct(string productCode)
+        {
+            _product = _productList.Find(p => p.Code == productCode);
+            _product.Description = txtDescripcion.Text;
+            _product.Price = float.Parse(txtPrecio.Text);
+            _product.Quantity = int.Parse(txtCantidad.Text);
+            _product = _objDTO.UpdateSelectedProduct(_product);
+            LoadGrid();
+            ClearFields();
         }
     }
 }

@@ -40,6 +40,15 @@ namespace Caja_Registradora.DAO
             return product;
         }
 
+        public Product UpdateSelectedProduct(Product product)
+        {
+            int productIndex = _productList.IndexOf(_productList.Find(p => p.Code == product.Code));
+            Product updatedProduct = _productList[productIndex] = product;
+            _productList[productIndex] = updatedProduct;
+            WriteOnFile(_productList);
+            return updatedProduct;
+        }
+
         //Creamos método FillProductList para leer nuestros archivos de Texto en Products.Json
         private void FillProductList()
         {

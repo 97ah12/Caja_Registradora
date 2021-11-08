@@ -221,6 +221,7 @@ namespace Caja_Registradora.Views.Modules
             this.btnActualizar.TabIndex = 112;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // btnEliminar
             // 
@@ -241,8 +242,9 @@ namespace Caja_Registradora.Views.Modules
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(109, 22);
             this.btnBuscar.TabIndex = 110;
-            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.Text = "LIMPIAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // txtDescripcion
             // 
