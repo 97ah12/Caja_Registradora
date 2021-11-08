@@ -39,5 +39,11 @@ namespace Caja_Registradora.DTO
             _productList = _objDAO.GetProductList();
             return _productList;
         }
+
+        public Product GetProductByCode(string code)
+        {
+            Product product = _objDAO.GetProductByCode(code);
+            return product;
+        }
     }
 }

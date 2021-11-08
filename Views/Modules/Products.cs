@@ -16,6 +16,7 @@ namespace Caja_Registradora.Views.Modules
         readonly ProductDTO _objDTO;
         SaleDTO _saleDTO;
         List<Product> _productList;
+        Product _product;
         public Products()
         {
             /*Instanciamos el obj DTO y ProductList
@@ -25,6 +26,7 @@ namespace Caja_Registradora.Views.Modules
             _objDTO = new();
             _saleDTO = new();
             _productList = new();
+            _product = new();
             LoadGrid();
         }
 
@@ -134,6 +136,17 @@ namespace Caja_Registradora.Views.Modules
         private void BtnInformedeVentas_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string productCode = dgvProducts.SelectedRows[0].Cells[0].Value.ToString();
+            _product = _objDTO.GetProductByCode(productCode);
+            txtCodigo.Text = _product.Code;
+            txtDescripcion.Text = _product.Description;
+            txtPrecio.Text = Convert.ToString(_product.Price);
+            txtCantidad.Text = Convert.ToString(_product.Quantity);
+            btnCrear.Enabled = false;
         }
     }
 }

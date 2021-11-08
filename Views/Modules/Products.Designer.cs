@@ -101,6 +101,7 @@ namespace Caja_Registradora.Views.Modules
             this.dgvProducts.Size = new System.Drawing.Size(551, 189);
             this.dgvProducts.TabIndex = 100;
             this.dgvProducts.TabStop = false;
+            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProducts_CellClick);
             // 
             // txtCantidadaVender
             // 

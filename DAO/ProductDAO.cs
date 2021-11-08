@@ -34,6 +34,12 @@ namespace Caja_Registradora.DAO
             return _productList;
         }
 
+        public Product GetProductByCode(string code)
+        {
+            Product product = _productList.Find(p => p.Code == code);
+            return product;
+        }
+
         //Creamos método FillProductList para leer nuestros archivos de Texto en Products.Json
         private void FillProductList()
         {
