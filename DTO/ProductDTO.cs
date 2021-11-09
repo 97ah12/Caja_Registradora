@@ -50,5 +50,13 @@ namespace Caja_Registradora.DTO
         {
             return _objDAO.UpdateSelectedProduct(product);
         }
+
+        public bool DeleteProduct(string productCode)
+        {
+            _objDAO.DeleteProduct(productCode);
+            GetProductList();
+            if(_productList.)
+            return true;
+        }
     }
 }

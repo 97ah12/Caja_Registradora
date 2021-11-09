@@ -49,10 +49,28 @@ namespace Caja_Registradora.DAO
             return updatedProduct;
         }
 
+        public void UpdateSaledProduct(string productCode, int quantity)
+        {
+            GetProductList();
+            int productIndex = _productList.IndexOf(_productList.Find(p => p.Code == productCode));
+            Product updatedProduct = _productList[productIndex];
+            //Asignacion Compuesta con (-=)
+            updatedProduct.Quantity -= quantity;
+            _productList[productIndex] = updatedProduct;
+            WriteOnFile(_productList);
+        }
+
+        public void DeleteProduct(string productCode)
+        {
+            int productIndex = _productList.IndexOf(_productList.Find(p => p.Code == productCode));
+            _productList.RemoveAt(productIndex);
+            WriteOnFile(_productList);
+        }
+
         //Creamos método FillProductList para leer nuestros archivos de Texto en Products.Json
         private void FillProductList()
         {
-            //Llamamos la clase TextReader que nos permite escribir archivos de Texto
+            //Llamamos la clase TextReader que nos permite leer archivos de Texto
             TextReader reader;
             //Instanciamos la clase StreamReader para que lea dentro de Productos.Json nuestra lista de productos
             using (reader = new StreamReader(@"Products.json"))

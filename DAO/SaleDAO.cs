@@ -13,10 +13,13 @@ namespace Caja_Registradora.DAO
     {
         //Creamos la lista _salesList
         List<Sale> _salesList;
+        ProductDAO productDAO;
         public SaleDAO()
         {
             //Instanciamos _salesList
             _salesList = new();
+            //
+            productDAO = new();
         }
         //Creamos el método GetSlesList que nos va a traer la Lista _salesList
         public List<Sale> GetSalesList()
@@ -29,6 +32,7 @@ namespace Caja_Registradora.DAO
         {
             //Añadimos sale a nuestra lista _salesList
             _salesList.Add(sale);
+            productDAO.UpdateSaledProduct(sale.ProductCode, sale.Quantity);
             //Llamamos método WriteOnFile en _salesList para que la muestre serializada
             WriteOnFile(_salesList);
         }

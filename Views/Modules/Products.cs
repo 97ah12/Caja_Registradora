@@ -92,6 +92,7 @@ namespace Caja_Registradora.Views.Modules
             Sale saleResponse = _saleDTO.SaleProduct(sale);
             if (saleResponse.IsCorrect)
             {
+                LoadGrid();
                 MessageHelper.ShowMessage($"Venta registrada Correctamente total a pagar {sale.TotalSale}");
             }
             else
@@ -183,6 +184,17 @@ namespace Caja_Registradora.Views.Modules
             _product = _objDTO.UpdateSelectedProduct(_product);
             LoadGrid();
             ClearFields();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            string productCode = txtCodigo.Text;
+            DeleteProduct(productCode);
+        }
+
+        private void DeleteProduct(string productCode)
+        {
+            
         }
     }
 }

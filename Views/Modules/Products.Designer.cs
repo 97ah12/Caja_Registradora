@@ -233,6 +233,7 @@ namespace Caja_Registradora.Views.Modules
             this.btnEliminar.TabIndex = 111;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnBuscar
             // 
