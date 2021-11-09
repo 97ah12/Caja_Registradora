@@ -91,9 +91,9 @@ namespace Caja_Registradora.DAO
             //Instanciamos StreamWriter que nos permite ya como tal escrbir el archivo texto
             using (writer = new StreamWriter(@"Products.json", append: false))
             {
-                //Aqui se serializa la lista para poder escribir el archivo
+                //Aqui se serializa la lista para poder escribir el archivo(la lista se pasa a texto (string))
                 var serializedProduct = JsonConvert.SerializeObject(products);
-                //Aqui la lista se pasa a texto (string)
+                //m Escribe la lista ya serializada en textoplano
                 writer.WriteLine(serializedProduct);
                 //Se cierra la escritura del archivo
                 writer.Close();

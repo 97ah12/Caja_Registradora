@@ -39,7 +39,7 @@ namespace Caja_Registradora.Views.Modules
             var list = new BindingList<Product>(_productList);
             dgvProducts.DataSource = list;
             //
-            int code = _productList.Count + 1;
+            int code = _productList.Count+1;
             txtCodigo.Text = Convert.ToString(code);
             txtConsecutivo.Text = txtCodigo.Text;
             //
@@ -80,9 +80,18 @@ namespace Caja_Registradora.Views.Modules
             txtCantidad.Text = "";
             txtPrecio.Text = "";
             txtCodigo.Text = txtConsecutivo.Text;
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnCrear.Enabled = true;
         }
         private void RegisterSale()
         {
+            if (txtCantidadaVender.Text == "") { 
+                MessageHelper.ShowMessage("La cantidad a vender no puede ser 0");
+                return;
+            }
+
+
             Sale sale = new()
             {
                 ProductCode = comboProducts.SelectedValue.ToString(),
@@ -157,6 +166,7 @@ namespace Caja_Registradora.Views.Modules
             txtCantidad.Text = Convert.ToString(_product.Quantity);
             btnActualizar.Enabled = true;
             btnCrear.Enabled = false;
+            btnEliminar.Enabled = true;
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -194,7 +204,16 @@ namespace Caja_Registradora.Views.Modules
 
         private void DeleteProduct(string productCode)
         {
-            
+            bool ifisDeleted = _objDTO.DeleteProduct(productCode);
+            if (ifisDeleted) { 
+                MessageHelper.ShowMessage("El producto se eliminó satisfactoriamente");
+                LoadGrid();
+                ClearFields();
+            }
+            else
+                MessageHelper.ShowMessage("Por alguna razón el producto no pudo ser eliminado");
+
         }
+
     }
 }

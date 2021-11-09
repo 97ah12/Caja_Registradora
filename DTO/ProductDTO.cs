@@ -55,8 +55,10 @@ namespace Caja_Registradora.DTO
         {
             _objDAO.DeleteProduct(productCode);
             GetProductList();
-            if(_productList.)
-            return true;
+            if (_productList.Contains(_productList.Find(p => p.Code == productCode)))
+                return false;
+            else
+                return true;
         }
     }
 }
