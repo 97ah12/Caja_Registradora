@@ -20,17 +20,24 @@ namespace Caja_Registradora.DTO
             _productDAO = new();
             product = new();
         }
-
+        //Creamos metodo SaleProduct de tipo Sale y como parametro sale
         public Sale SaleProduct(Sale sale)
         {
+            //Instanciamos saleResponse
             Sale saleResponse = new();
+            //Llamamos a GetProducList de DAO y lo guardamos en _productList
             _productList = _productDAO.GetProductList();
+            //Llamamos el metodo Any que determina cualquier elemento que satisfaga una condicion
+            //Si el codigo del modelo product es igual al productCode del modelo sales hace lo sgt:
             if (_productList.Any(p => p.Code == sale.ProductCode))
             {
+                //Encontramos el product que cumpla nuestra comparacion 
                 product = _productList.Find(p => p.Code == sale.ProductCode);
                 if (product.Quantity >= sale.Quantity)
                 {
                     saleResponse = sale;
+
+                    //
                     saleResponse.IsCorrect = true;
                     saleResponse.TotalSale = product.Price * sale.Quantity;
                     _objDAO.SaleProduct(saleResponse);

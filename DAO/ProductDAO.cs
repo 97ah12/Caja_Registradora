@@ -36,34 +36,47 @@ namespace Caja_Registradora.DAO
 
         public Product GetProductByCode(string code)
         {
+            //encontramos el codigo del producto y lo comparamos con nuestra expresion landa
             Product product = _productList.Find(p => p.Code == code);
             return product;
         }
-
+        //Creamos metodo para actualizar un producto
         public Product UpdateSelectedProduct(Product product)
         {
+            //Buscamos y comparamos el index del producto con nuestra expresion landa y el codigo del producto
             int productIndex = _productList.IndexOf(_productList.Find(p => p.Code == product.Code));
+            //Con el index hallado igualamos para que nos traiga todo el producto como tal
             Product updatedProduct = _productList[productIndex] = product;
+            //Lo actualiazamos en _productList
             _productList[productIndex] = updatedProduct;
+            //Escribimos nuestro archivo actualizado en nuestra carpeta Json
             WriteOnFile(_productList);
             return updatedProduct;
         }
-
+        //Creamos metodo para actualizar la venta de un producto
         public void UpdateSaledProduct(string productCode, int quantity)
         {
             GetProductList();
+            //Obtenemos el index del producto comparando nuestra expresion landa con el codigo del producto
             int productIndex = _productList.IndexOf(_productList.Find(p => p.Code == productCode));
+            //Asignamos a updateProduct el producto encontrado anteriormente
             Product updatedProduct = _productList[productIndex];
             //Asignacion Compuesta con (-=)
             updatedProduct.Quantity -= quantity;
+            //Actualizamos la lista
             _productList[productIndex] = updatedProduct;
+            //Escribimos la lista actualizada en nuestro archivo Json
             WriteOnFile(_productList);
         }
-
+        //Creamos metodo DeleteProduct
         public void DeleteProduct(string productCode)
         {
+            //Obtenemos el index del producto comparando nuestra expresion landa con el codigo del producto
+            //Guardamos el index del producto en productIndex
             int productIndex = _productList.IndexOf(_productList.Find(p => p.Code == productCode));
+            //Usamos metodo RemoveAt() y le pasamos como parametro productIndex
             _productList.RemoveAt(productIndex);
+            //Escribe la lista  actualizada en nuestro archivo Json
             WriteOnFile(_productList);
         }
 

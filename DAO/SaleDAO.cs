@@ -32,22 +32,27 @@ namespace Caja_Registradora.DAO
         {
             //Añadimos sale a nuestra lista _salesList
             _salesList.Add(sale);
+            //Acutaliza con el metodo UpdateSaledProduct lo que recibe como parametro desde la vista
             productDAO.UpdateSaledProduct(sale.ProductCode, sale.Quantity);
             //Llamamos método WriteOnFile en _salesList para que la muestre serializada
             WriteOnFile(_salesList);
         }
-
+        //Creamos el metodo GetSales
         public List<Sale> GetSales()
         {
+            //llamamos el metodo FillSalesList
             FillSalesList();
             return _salesList;
         }
-
+        //Creamos el metodo GetSalesByDate
         public List<Sale> GetSalesByDate(DateTime date)
         {
+            //Llamamos FillSalesList el cual nos deja leer nuestros archivos de Texto en Products
             FillSalesList();
+            //Instanciamos salesFiltered
             List<Sale> salesFiltered = new();
             salesFiltered = _salesList;
+            //Guardamos todos los elementos que hacen match con nuestro predicado en salesFiltered
             salesFiltered = salesFiltered.FindAll(s => s.SaleDate == date.ToShortDateString());
             return salesFiltered;
         }
