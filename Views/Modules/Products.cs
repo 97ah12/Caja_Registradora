@@ -36,6 +36,8 @@ namespace Caja_Registradora.Views.Modules
         {
             //
             _productList = _objDTO.GetProductList();
+            //llamamos BindingList el cual es un tipo de Lista generico que nos permite
+            //representar una cantidad de objetos que pueden ser accesados por index
             var list = new BindingList<Product>(_productList);
             dgvProducts.DataSource = list;
             //

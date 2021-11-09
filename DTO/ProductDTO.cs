@@ -33,7 +33,7 @@ namespace Caja_Registradora.DTO
                 return true;
             }
         }
-
+        //Traemos GetProductList de DAO que es donde almancenamos nuestros productos
         public List<Product> GetProductList()
         {
             _productList = _objDAO.GetProductList();
