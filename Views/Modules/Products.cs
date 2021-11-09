@@ -14,7 +14,7 @@ namespace Caja_Registradora.Views.Modules
          * Declaramos ProductList
          */
         readonly ProductDTO _objDTO;
-        SaleDTO _saleDTO;
+        readonly SaleDTO _saleDTO;
         List<Product> _productList;
         Product _product;
         public Products()
@@ -34,19 +34,22 @@ namespace Caja_Registradora.Views.Modules
 
         private void LoadGrid()
         {
-            //
+            // Obtengo la Lista de productos Actualizada atravez de mi Objeto DTO
             _productList = _objDTO.GetProductList();
-            //llamamos BindingList el cual es un tipo de Lista generico que nos permite
-            //representar una cantidad de objetos que pueden ser accesados por index
             var list = new BindingList<Product>(_productList);
+            // Seteo la propiedad DataSource del Grid dgvProducts con la BindingList<Product>
             dgvProducts.DataSource = list;
-            //
-            int code = _productList.Count+1;
-            txtCodigo.Text = Convert.ToString(code);
+            //Obtengo el ultimo codigo registrado encontrando el Ultimo index de producto registrado y el MOdelo de Producto
+            int code = int.Parse(_productList[_productList.Count - 1].Code);
+            //Luego en la caja de texto pongo el ultimo codigo de producto mas 1 que es el codigo del siguiente producto
+            txtCodigo.Text = Convert.ToString(code + 1);
+            //Seteo el campo de texto Consecutivo igual al campo texto
             txtConsecutivo.Text = txtCodigo.Text;
-            //
+            //Cargo el Combo Box con los elementos de la Lista _productList
             comboProducts.DataSource = _productList;
+            // Seleciono la propiedad del modelo que quiero que sea la que se vea al usuario
             comboProducts.DisplayMember = "Description";
+            // Seleciono la propiedad de valor en el Combo Box en este caso el Codigo de producto
             comboProducts.ValueMember = "Code";
         }
         private void CreateProduct()
@@ -98,7 +101,7 @@ namespace Caja_Registradora.Views.Modules
             {
                 ProductCode = comboProducts.SelectedValue.ToString(),
                 Quantity = int.Parse(txtCantidadaVender.Text),
-                SaleDate = DateTime.Now
+                SaleDate = DateTime.Now.ToShortDateString()
             };
             Sale saleResponse = _saleDTO.SaleProduct(sale);
             if (saleResponse.IsCorrect)
@@ -194,6 +197,7 @@ namespace Caja_Registradora.Views.Modules
             _product.Price = float.Parse(txtPrecio.Text);
             _product.Quantity = int.Parse(txtCantidad.Text);
             _product = _objDTO.UpdateSelectedProduct(_product);
+            MessageHelper.ShowMessage($"Producto {_product.Description} actualizado Correctamente");
             LoadGrid();
             ClearFields();
         }

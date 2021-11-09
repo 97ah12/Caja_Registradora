@@ -51,5 +51,10 @@ namespace Caja_Registradora.DTO
         {
             return _objDAO.GetSales();
         }
+
+        public List<Sale> GetSalesByDate(DateTime date)
+        {
+            return _objDAO.GetSalesByDate(date);
+        }
     }
 }
