@@ -31,8 +31,8 @@ namespace Caja_Registradora.Views.Modules
         {
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.txtConsecutivo = new System.Windows.Forms.TextBox();
-            this.txtFecha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvSales = new System.Windows.Forms.DataGridView();
@@ -42,6 +42,8 @@ namespace Caja_Registradora.Views.Modules
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(240, 14);
             this.label2.Name = "label2";
@@ -52,8 +54,8 @@ namespace Caja_Registradora.Views.Modules
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.datePicker);
             this.panel1.Controls.Add(this.txtConsecutivo);
-            this.panel1.Controls.Add(this.txtFecha);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(17, 44);
@@ -62,24 +64,26 @@ namespace Caja_Registradora.Views.Modules
             this.panel1.Size = new System.Drawing.Size(592, 39);
             this.panel1.TabIndex = 2;
             // 
+            // datePicker
+            // 
+            this.datePicker.Location = new System.Drawing.Point(69, 7);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(200, 23);
+            this.datePicker.TabIndex = 4;
+            this.datePicker.ValueChanged += new System.EventHandler(this.DatePicker_ValueChanged);
+            // 
             // txtConsecutivo
             // 
+            this.txtConsecutivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConsecutivo.Location = new System.Drawing.Point(445, 10);
             this.txtConsecutivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConsecutivo.Name = "txtConsecutivo";
             this.txtConsecutivo.Size = new System.Drawing.Size(110, 23);
             this.txtConsecutivo.TabIndex = 3;
             // 
-            // txtFecha
-            // 
-            this.txtFecha.Location = new System.Drawing.Point(72, 10);
-            this.txtFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(110, 23);
-            this.txtFecha.TabIndex = 2;
-            // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(346, 12);
             this.label3.Name = "label3";
@@ -100,21 +104,34 @@ namespace Caja_Registradora.Views.Modules
             // 
             this.dgvSales.AllowUserToAddRows = false;
             this.dgvSales.AllowUserToDeleteRows = false;
+            this.dgvSales.AllowUserToResizeColumns = false;
+            this.dgvSales.AllowUserToResizeRows = false;
+            this.dgvSales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSales.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSales.Location = new System.Drawing.Point(17, 122);
             this.dgvSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvSales.MultiSelect = false;
             this.dgvSales.Name = "dgvSales";
             this.dgvSales.ReadOnly = true;
+            this.dgvSales.RowHeadersVisible = false;
             this.dgvSales.RowHeadersWidth = 51;
             this.dgvSales.RowTemplate.Height = 29;
+            this.dgvSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSales.ShowEditingIcon = false;
             this.dgvSales.Size = new System.Drawing.Size(592, 307);
             this.dgvSales.TabIndex = 3;
+            this.dgvSales.TabStop = false;
             // 
             // SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.Controls.Add(this.dgvSales);
             this.Controls.Add(this.panel1);
@@ -135,9 +152,9 @@ namespace Caja_Registradora.Views.Modules
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtConsecutivo;
-        private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvSales;
+        private System.Windows.Forms.DateTimePicker datePicker;
     }
 }

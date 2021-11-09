@@ -42,8 +42,17 @@ namespace Caja_Registradora.DAO
             FillSalesList();
             return _salesList;
         }
-        //Creamos método FillSalesList para leer nuestros archivos de Texto en Products.Json
 
+        public List<Sale> GetSalesByDate(DateTime date)
+        {
+            FillSalesList();
+            List<Sale> salesFiltered = new();
+            salesFiltered = _salesList;
+            salesFiltered = salesFiltered.FindAll(s => s.SaleDate == date.ToShortDateString());
+            return salesFiltered;
+        }
+
+        //Creamos método FillSalesList para leer nuestros archivos de Texto en Products.
         private void FillSalesList()
         {
             //Llamamos la clase TextReader que nos permite escribir archivos de Texto
