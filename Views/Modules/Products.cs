@@ -34,23 +34,31 @@ namespace Caja_Registradora.Views.Modules
 
         private void LoadGrid()
         {
+            int code = 0;
             // Obtengo la Lista de productos Actualizada atravez de mi Objeto DTO
             _productList = _objDTO.GetProductList();
-            var list = new BindingList<Product>(_productList);
-            // Seteo la propiedad DataSource del Grid dgvProducts con la BindingList<Product>
-            dgvProducts.DataSource = list;
-            //Obtengo el ultimo codigo registrado encontrando el Ultimo index de producto registrado y el MOdelo de Producto
-            int code = int.Parse(_productList[_productList.Count - 1].Code);
+            if (_productList == null)
+                MessageHelper.ShowErrorMessage("La lista de productos está vacia. Agregue uno");
+            else{
+                //Creo variable "Anonima" con var que no necesita especificar un tipo de dato ya que toma el que venga 
+                //en el metodo que se llame despues 
+                var list = new BindingList<Product>(_productList);
+                // Seteo la propiedad DataSource del Grid dgvProducts con la BindingList<Product>
+                dgvProducts.DataSource = list;
+                //Obtengo el ultimo codigo registrado encontrando el Ultimo index de producto registrado y el MOdelo de Producto
+                code = int.Parse(_productList[_productList.Count - 1].Code);
+                //Cargo el Combo Box con los elementos de la Lista _productList
+                comboProducts.DataSource = _productList;
+                // Seleciono la propiedad del modelo que quiero que sea la que se vea al usuario
+                comboProducts.DisplayMember = "Description";
+                // Seleciono la propiedad de valor en el Combo Box en este caso el Codigo de producto
+                comboProducts.ValueMember = "Code";
+            }
+            
             //Luego en la caja de texto pongo el ultimo codigo de producto mas 1 que es el codigo del siguiente producto
             txtCodigo.Text = Convert.ToString(code + 1);
             //Seteo el campo de texto Consecutivo igual al campo texto
             txtConsecutivo.Text = txtCodigo.Text;
-            //Cargo el Combo Box con los elementos de la Lista _productList
-            comboProducts.DataSource = _productList;
-            // Seleciono la propiedad del modelo que quiero que sea la que se vea al usuario
-            comboProducts.DisplayMember = "Description";
-            // Seleciono la propiedad de valor en el Combo Box en este caso el Codigo de producto
-            comboProducts.ValueMember = "Code";
         }
         private void CreateProduct()
         {

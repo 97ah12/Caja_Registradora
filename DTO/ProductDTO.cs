@@ -25,13 +25,21 @@ namespace Caja_Registradora.DTO
             /*Verifica dentro de la lista que no contenga en producto enviado, Si no lo contiene permitira
             guardarlo en la lista de la Clase DAO y retorna TRUE d elo contrario retorna FALSE
             */
-            if (_productList.Contains(product))
-                return false;
-            else
+            if(_productList == null)
             {
-                _objDAO.CreateProduct(product);
+                //La lista de productos esta Vacia
                 return true;
+            }else
+            {
+                if (_productList.Contains(product))
+                    return false;
+                else
+                {
+                    _objDAO.CreateProduct(product);
+                    return true;
+                }
             }
+            
         }
         //Traemos GetProductList de DAO que es donde almacenamos nuestros productos
         public List<Product> GetProductList()

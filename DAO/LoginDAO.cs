@@ -13,8 +13,8 @@ namespace Caja_Registradora.DAO
             // Esto simula un usuario y contraseña registardo desde la Base de Datos
             _user = new()
             {
-                UserName = "Admin",
-                Password = "1234*"
+                UserName = "A",
+                Password = "1"
             };
         }
 
