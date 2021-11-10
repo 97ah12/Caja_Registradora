@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Caja_Registradora.Views.Modules;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,11 @@ namespace Caja_Registradora.Views
                 panelContainer.Controls.Clear();
                 panelContainer.Controls.Add(control);
             }
+        }
+
+        private void btnCloseSale_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

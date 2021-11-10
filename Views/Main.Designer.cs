@@ -30,9 +30,9 @@ namespace Caja_Registradora.Views
         private void InitializeComponent()
         {
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.buttonSales = new System.Windows.Forms.Button();
             this.productButton = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.buttonSales = new System.Windows.Forms.Button();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +46,18 @@ namespace Caja_Registradora.Views
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(200, 450);
             this.menuPanel.TabIndex = 0;
+            // 
+            // buttonSales
+            // 
+            this.buttonSales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSales.Location = new System.Drawing.Point(6, 170);
+            this.buttonSales.Name = "buttonSales";
+            this.buttonSales.Size = new System.Drawing.Size(191, 32);
+            this.buttonSales.TabIndex = 1;
+            this.buttonSales.Text = "Ventas";
+            this.buttonSales.UseVisualStyleBackColor = true;
+            this.buttonSales.Click += new System.EventHandler(this.ButtonSales_Click);
             // 
             // productButton
             // 
@@ -68,18 +80,6 @@ namespace Caja_Registradora.Views
             this.mainPanel.Size = new System.Drawing.Size(600, 450);
             this.mainPanel.TabIndex = 1;
             // 
-            // buttonSales
-            // 
-            this.buttonSales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSales.Location = new System.Drawing.Point(6, 170);
-            this.buttonSales.Name = "buttonSales";
-            this.buttonSales.Size = new System.Drawing.Size(191, 32);
-            this.buttonSales.TabIndex = 1;
-            this.buttonSales.Text = "Ventas";
-            this.buttonSales.UseVisualStyleBackColor = true;
-            this.buttonSales.Click += new System.EventHandler(this.ButtonSales_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -91,6 +91,7 @@ namespace Caja_Registradora.Views
             this.Controls.Add(this.menuPanel);
             this.Name = "Main";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.menuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

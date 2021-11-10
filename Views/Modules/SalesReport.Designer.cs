@@ -31,9 +31,7 @@ namespace Caja_Registradora.Views.Modules
         {
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
-            this.txtConsecutivo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtFecha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvSales = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
@@ -53,43 +51,22 @@ namespace Caja_Registradora.Views.Modules
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panel1.Controls.Add(this.datePicker);
-            this.panel1.Controls.Add(this.txtConsecutivo);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtFecha);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(17, 44);
+            this.panel1.Location = new System.Drawing.Point(1, 31);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(592, 39);
+            this.panel1.Size = new System.Drawing.Size(644, 39);
             this.panel1.TabIndex = 2;
             // 
-            // datePicker
+            // txtFecha
             // 
-            this.datePicker.Location = new System.Drawing.Point(69, 7);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(200, 23);
-            this.datePicker.TabIndex = 4;
-            this.datePicker.ValueChanged += new System.EventHandler(this.DatePicker_ValueChanged);
-            // 
-            // txtConsecutivo
-            // 
-            this.txtConsecutivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConsecutivo.Location = new System.Drawing.Point(445, 10);
-            this.txtConsecutivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtConsecutivo.Name = "txtConsecutivo";
-            this.txtConsecutivo.Size = new System.Drawing.Size(110, 23);
-            this.txtConsecutivo.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(346, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 15);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "CONSECUTIVO";
+            this.txtFecha.Location = new System.Drawing.Point(69, 9);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(113, 23);
+            this.txtFecha.TabIndex = 4;
             // 
             // label4
             // 
@@ -113,7 +90,7 @@ namespace Caja_Registradora.Views.Modules
             this.dgvSales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSales.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSales.Location = new System.Drawing.Point(17, 122);
+            this.dgvSales.Location = new System.Drawing.Point(17, 96);
             this.dgvSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvSales.MultiSelect = false;
             this.dgvSales.Name = "dgvSales";
@@ -123,7 +100,7 @@ namespace Caja_Registradora.Views.Modules
             this.dgvSales.RowTemplate.Height = 29;
             this.dgvSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSales.ShowEditingIcon = false;
-            this.dgvSales.Size = new System.Drawing.Size(592, 307);
+            this.dgvSales.Size = new System.Drawing.Size(615, 333);
             this.dgvSales.TabIndex = 3;
             this.dgvSales.TabStop = false;
             // 
@@ -138,7 +115,7 @@ namespace Caja_Registradora.Views.Modules
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SalesReport";
-            this.Size = new System.Drawing.Size(628, 446);
+            this.Size = new System.Drawing.Size(651, 446);
             this.Load += new System.EventHandler(this.SalesReport_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -151,10 +128,8 @@ namespace Caja_Registradora.Views.Modules
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtConsecutivo;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvSales;
-        private System.Windows.Forms.DateTimePicker datePicker;
+        private System.Windows.Forms.TextBox txtFecha;
     }
 }

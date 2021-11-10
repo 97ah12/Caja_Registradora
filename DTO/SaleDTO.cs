@@ -28,6 +28,7 @@ namespace Caja_Registradora.DTO
             //Instanciamos saleResponse
             Sale saleResponse = new();
             //Llamamos a GetProducList de DAO y lo guardamos en _productList
+            _sales = _objDAO.GetSales();
             _productList = _productDAO.GetProductList();
             //Llamamos el metodo Any que determina cualquier elemento que satisfaga una condicion
             //Si el codigo del modelo product es igual al productCode del modelo sales hace lo sgt:
@@ -45,7 +46,7 @@ namespace Caja_Registradora.DTO
                     }
                     else if (_sales != null)
                     {
-                        code = _sales[_sales.Count - 1].SaleCode;
+                        code = _sales[_sales.Count - 1].SaleCode + 1;
                     }
                     saleResponse.SaleCode = code;
                     //

@@ -35,6 +35,7 @@ namespace Caja_Registradora.Views.Modules
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.Name = "DashBoard";
             this.Size = new System.Drawing.Size(803, 379);
             this.ResumeLayout(false);

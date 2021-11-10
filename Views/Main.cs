@@ -31,5 +31,11 @@ namespace Caja_Registradora.Views
             SalesReport salesReport = new();
             OpenModule(salesReport);
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            Products productsView = new();
+            OpenModule(productsView);
+        }
     }
 }

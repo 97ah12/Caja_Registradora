@@ -24,12 +24,13 @@ namespace Caja_Registradora.DAO
         //Creamos el método GetSlesList que nos va a traer la Lista _salesList
         public List<Sale> GetSalesList()
         {
-            //FillSalesList();
+            FillSalesList();
             return _salesList;
         }
 
         public void SaleProduct(Sale sale)
         {
+            FillSalesList();
             //Añadimos sale a nuestra lista _salesList
             _salesList.Add(sale);
             //Acutaliza con el metodo UpdateSaledProduct lo que recibe como parametro desde la vista
@@ -44,6 +45,7 @@ namespace Caja_Registradora.DAO
             FillSalesList();
             return _salesList;
         }
+
         //Creamos el metodo GetSalesByDate
         public List<Sale> GetSalesByDate(DateTime date)
         {

@@ -10,24 +10,14 @@ namespace Caja_Registradora.Views.Modules
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void CloseSalesBox_Load(object sender, EventArgs e)
         {
-
+            LoadGrid();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void LoadGrid()
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            throw new NotImplementedException();
         }
     }
 }
