@@ -45,8 +45,11 @@ namespace Caja_Registradora.Views.Modules
                 var list = new BindingList<Product>(_productList);
                 // Seteo la propiedad DataSource del Grid dgvProducts con la BindingList<Product>
                 dgvProducts.DataSource = list;
-                //Obtengo el ultimo codigo registrado encontrando el Ultimo index de producto registrado y el MOdelo de Producto
-                code = int.Parse(_productList[_productList.Count - 1].Code);
+                if (_productList.Count == 0)
+                    code = 0;
+                else
+                    //Obtengo el ultimo codigo registrado encontrando el Ultimo index de producto registrado y el Modelo de Producto
+                    code = int.Parse(_productList[_productList.Count - 1].Code);
                 //Cargo el Combo Box con los elementos de la Lista _productList
                 comboProducts.DataSource = _productList;
                 // Seleciono la propiedad del modelo que quiero que sea la que se vea al usuario
@@ -54,7 +57,6 @@ namespace Caja_Registradora.Views.Modules
                 // Seleciono la propiedad de valor en el Combo Box en este caso el Codigo de producto
                 comboProducts.ValueMember = "Code";
             }
-            
             //Luego en la caja de texto pongo el ultimo codigo de producto mas 1 que es el codigo del siguiente producto
             txtCodigo.Text = Convert.ToString(code + 1);
             //Seteo el campo de texto Consecutivo igual al campo texto
@@ -104,12 +106,17 @@ namespace Caja_Registradora.Views.Modules
                 return;
             }
 
-
+            if (comboProducts.SelectedValue == null)
+            {
+                MessageHelper.ShowErrorMessage("Para vender debes Selecionar un producto");
+                return;
+            }
             Sale sale = new()
             {
                 ProductCode = comboProducts.SelectedValue.ToString(),
                 Quantity = int.Parse(txtCantidadaVender.Text),
-                SaleDate = DateTime.Now.ToShortDateString()
+                SaleDate = DateTime.Now.ToShortDateString(),
+                Description = comboProducts.Text
             };
             Sale saleResponse = _saleDTO.SaleProduct(sale);
             if (saleResponse.IsCorrect)
@@ -161,7 +168,14 @@ namespace Caja_Registradora.Views.Modules
 
         private void BtnInformedeVentas_Click(object sender, EventArgs e)
         {
+            SalesReport salesReport = new();
+            OpenModule(salesReport);
+        }
 
+        private void OpenModule(SalesReport salesReport)
+        {
+            Module module = new(salesReport);
+            module.ShowDialog();
         }
 
         private void DgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -221,6 +235,8 @@ namespace Caja_Registradora.Views.Modules
             bool ifisDeleted = _objDTO.DeleteProduct(productCode);
             if (ifisDeleted) { 
                 MessageHelper.ShowMessage("El producto se eliminó satisfactoriamente");
+                //Limpio la Lista de productos en el Combo de Products
+                comboProducts.Text = "";
                 LoadGrid();
                 ClearFields();
             }

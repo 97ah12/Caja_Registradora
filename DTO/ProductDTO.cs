@@ -28,6 +28,7 @@ namespace Caja_Registradora.DTO
             if(_productList == null)
             {
                 //La lista de productos esta Vacia
+                _objDAO.CreateProduct(product);
                 return true;
             }else
             {

@@ -13,11 +13,13 @@ namespace Caja_Registradora.DTO
         readonly SaleDAO _objDAO;
         readonly ProductDAO _productDAO;
         private List<Product> _productList;
+        private List<Sale> _sales;
         Product product;
         public SaleDTO()
         {
             _objDAO = new();
             _productDAO = new();
+            _sales = new();
             product = new();
         }
         //Creamos metodo SaleProduct de tipo Sale y como parametro sale
@@ -35,8 +37,17 @@ namespace Caja_Registradora.DTO
                 product = _productList.Find(p => p.Code == sale.ProductCode);
                 if (product.Quantity >= sale.Quantity)
                 {
+                    int code = 0;
                     saleResponse = sale;
-
+                    if (_sales.Count == 0)
+                    {
+                        code += 1;
+                    }
+                    else if (_sales != null)
+                    {
+                        code = _sales[_sales.Count - 1].SaleCode;
+                    }
+                    saleResponse.SaleCode = code;
                     //
                     saleResponse.IsCorrect = true;
                     saleResponse.TotalSale = product.Price * sale.Quantity;

@@ -10,6 +10,7 @@ namespace Caja_Registradora.Models
     {
         public int SaleCode { get; set; }
         public string ProductCode { get; set; }
+        public string Description { get; set; }
         public int Quantity { get; set; }
         public float TotalSale { get; set; }
         public string SaleDate { get; set; }

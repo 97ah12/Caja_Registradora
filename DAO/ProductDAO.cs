@@ -23,8 +23,17 @@ namespace Caja_Registradora.DAO
         public void CreateProduct(Product product)
         {
             //Agrego el product enviado desde el DTO a la Lista Global
-            _productList.Add(product);
-            WriteOnFile(_productList);
+            if (_productList == null)
+            {
+                _productList = new();
+                _productList.Add(product);
+                WriteOnFile(_productList);
+            }
+            else
+            {
+                _productList.Add(product);
+                WriteOnFile(_productList);
+            }
         }
 
         public List<Product> GetProductList()
