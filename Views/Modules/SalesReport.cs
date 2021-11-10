@@ -29,9 +29,10 @@ namespace Caja_Registradora.Views.Modules
             txtFecha.Enabled = false;
             txtFecha.Text = DateTime.Now.ToShortDateString();
         }
-
+        //Creamos metodo LoadGrid
         private void LoadGrid()
         {
+            //Selecciona el origen de los datos a dgvSales 
             dgvSales.DataSource = _objDTO.GetSales();
         }
 

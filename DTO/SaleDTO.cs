@@ -65,14 +65,16 @@ namespace Caja_Registradora.DTO
             sale.IsCorrect = true;
             return sale;
         }
-
+        //Creamos metodo GetSales que nos trae las ventas
         public List<Sale> GetSales()
         {
+            //Trae las ventas de DAO
             return _objDAO.GetSales();
         }
-
+        //Creamos metodo GetSalesByDate
         public List<Sale> GetSalesByDate(DateTime date)
         {
+            //Trae las ventas por fecha de DAO
             return _objDAO.GetSalesByDate(date);
         }
     }
