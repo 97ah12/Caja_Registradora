@@ -150,6 +150,7 @@ namespace Caja_Registradora.Views.Modules
             txtCodigo.Enabled = false;
             Dock = DockStyle.Fill;
             btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
         //Evento click que acciona vender
         private void BtnVender_Click(object sender, EventArgs e)
@@ -223,6 +224,7 @@ namespace Caja_Registradora.Views.Modules
             txtCantidad.Text = string.Empty;
             btnCrear.Enabled = true;
             btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
         //Evento Clicl Actualizar 
         private void BtnActualizar_Click(object sender, EventArgs e)

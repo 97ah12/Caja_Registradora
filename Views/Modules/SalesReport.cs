@@ -28,12 +28,17 @@ namespace Caja_Registradora.Views.Modules
             Dock = DockStyle.Fill;
             txtFecha.Enabled = false;
             txtFecha.Text = DateTime.Now.ToShortDateString();
+            if (_salesList.Count == 0)
+            {
+                btnCloseSales.Enabled = false;
+            }
         }
         //Creamos metodo LoadGrid
         private void LoadGrid()
         {
-            //Selecciona el origen de los datos a dgvSales 
+            //Selecciona el origen de los datos a dgvSales
             dgvSales.DataSource = _objDTO.GetSales();
+            _salesList = _objDTO.GetSales();
         }
 
         private void btnCloseSales_Click(object sender, EventArgs e)
