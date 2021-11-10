@@ -34,6 +34,7 @@ namespace Caja_Registradora.Views.Modules
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvSales = new System.Windows.Forms.DataGridView();
+            this.btnCloseSales = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +54,7 @@ namespace Caja_Registradora.Views.Modules
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.btnCloseSales);
             this.panel1.Controls.Add(this.txtFecha);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(1, 31);
@@ -104,6 +106,19 @@ namespace Caja_Registradora.Views.Modules
             this.dgvSales.TabIndex = 3;
             this.dgvSales.TabStop = false;
             // 
+            // btnCloseSales
+            // 
+            this.btnCloseSales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseSales.Location = new System.Drawing.Point(478, 9);
+            this.btnCloseSales.Name = "btnCloseSales";
+            this.btnCloseSales.Size = new System.Drawing.Size(108, 23);
+            this.btnCloseSales.TabIndex = 5;
+            this.btnCloseSales.Text = "Cerrar Venta";
+            this.btnCloseSales.UseVisualStyleBackColor = true;
+            this.btnCloseSales.Click += new System.EventHandler(this.btnCloseSales_Click);
+            // 
             // SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -131,5 +146,6 @@ namespace Caja_Registradora.Views.Modules
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvSales;
         private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.Button btnCloseSales;
     }
 }

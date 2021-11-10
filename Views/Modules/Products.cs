@@ -188,10 +188,10 @@ namespace Caja_Registradora.Views.Modules
             OpenModule(salesReport);
         }
         //Creamos metodo OpenModule que pone un control de tipo usercontrol(en la vista)
-        private void OpenModule(SalesReport salesReport)
+        private void OpenModule(UserControl control)
         {
             //instanciamos module con parametro salesReport
-            Module module = new(salesReport);
+            Module module = new(control);
             module.ShowDialog();
         }
         //Evento click de venta cuando clickeamos en el DataGrid
@@ -266,5 +266,10 @@ namespace Caja_Registradora.Views.Modules
 
         }
 
+        private void btnCierredeCaja_Click(object sender, EventArgs e)
+        {
+            CloseSalesBox closedSaleBox = new();
+            OpenModule(closedSaleBox);
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace Caja_Registradora.DAO
     {
         List<ClosedSaleBox> _closeSaleList;
         List<Sale> _sales;
+        ClosedSaleBox _closedSale;
         public ClosedSalesBoxDAO()
         {
             _closeSaleList = new();
@@ -27,7 +28,17 @@ namespace Caja_Registradora.DAO
 
         public void GenerateCloseSale(List<Sale> sales)
         {
-            
+            _sales = sales.FindAll(s => s.SaleDate == DateTime.Now.ToShortDateString());
+            FillClosedSalesList();
+            _closedSale = new();
+            _closedSale.Date = _sales[0].SaleDate;
+            _closedSale.TotalSales = _sales.Count;
+            foreach (var item in _sales)
+            {
+                //Asignacion Compuesta
+                _closedSale.TotalCash += item.TotalSale;
+            }
+            _closeSaleList.Add(_closedSale);
             WriteOnFile(_closeSaleList);
         }
 

@@ -147,6 +147,7 @@ namespace Caja_Registradora.Views.Modules
             this.btnCierredeCaja.TabIndex = 1;
             this.btnCierredeCaja.Text = "CIERRE DE CAJA";
             this.btnCierredeCaja.UseVisualStyleBackColor = true;
+            this.btnCierredeCaja.Click += new System.EventHandler(this.btnCierredeCaja_Click);
             // 
             // groupBox1
             // 
