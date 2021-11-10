@@ -12,11 +12,12 @@ namespace Caja_Registradora.Views.Modules
             InitializeComponent();
             _objDTO = new();
         }
-
+        //Evento Click cargarReporteDeVentas
         private void SalesReport_Load(object sender, System.EventArgs e)
         {
             //Cargamos los datos de ventas guardados
             LoadGrid();
+            //Se acopla y llena todo el campo que queda
             Dock = DockStyle.Fill;
             txtFecha.Enabled = false;
             txtFecha.Text = DateTime.Now.ToShortDateString();
