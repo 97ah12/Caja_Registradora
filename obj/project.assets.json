@@ -48,28 +48,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\diego\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\chanc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\diego\\Source\\Repos\\97ah12\\Caja_Registradora\\Caja_Registradora.csproj",
+      "projectUniqueName": "C:\\Users\\chanc\\Source\\Repos\\97ah12\\Caja_Registradora\\Caja_Registradora.csproj",
       "projectName": "Caja_Registradora",
-      "projectPath": "C:\\Users\\diego\\Source\\Repos\\97ah12\\Caja_Registradora\\Caja_Registradora.csproj",
-      "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\diego\\Source\\Repos\\97ah12\\Caja_Registradora\\obj\\",
+      "projectPath": "C:\\Users\\chanc\\Source\\Repos\\97ah12\\Caja_Registradora\\Caja_Registradora.csproj",
+      "packagesPath": "C:\\Users\\chanc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chanc\\Source\\Repos\\97ah12\\Caja_Registradora\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\chanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0-windows7.0"
