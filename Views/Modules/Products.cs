@@ -31,7 +31,7 @@ namespace Caja_Registradora.Views.Modules
         }
 
         #region Methods
-
+        //Creamos metdo LoadGrid que nos ayuda a cargar los datos en el Grid
         private void LoadGrid()
         {
             int code = 0;
@@ -62,8 +62,10 @@ namespace Caja_Registradora.Views.Modules
             //Seteo el campo de texto Consecutivo igual al campo texto
             txtConsecutivo.Text = txtCodigo.Text;
         }
+        //Creamos el metodo CreateProduct
         private void CreateProduct()
         {
+            //Usamos try para que intente todos los pasos entre los brackets 
             try
             {
                 Product product = new()
@@ -73,6 +75,8 @@ namespace Caja_Registradora.Views.Modules
                     Quantity = int.Parse(txtCantidad.Text),
                     Description = txtDescripcion.Text
                 };
+                //Llamamos CreateProduct de DTO con parametro establecido product guardando esto en
+                // guardando esto en CreateProductResponse
                 bool createProductResponse = _objDTO.CreateProduct(product);
                 if (createProductResponse)
                 {
@@ -83,34 +87,40 @@ namespace Caja_Registradora.Views.Modules
                 else
                     MessageHelper.ShowErrorMessage("El producto no se creó, por alguna razón");
             }
+            //Atrapamos la excepcion y la mostramos con un mensaje de error en la clase predeterminada
             catch (Exception ex)
             {
                 MessageHelper.ShowErrorMessage(ex.Message);
             }
         }
-
+        //Creamos el metodo ClearFields para limpiar las celdas
         private void ClearFields()
         {
             txtDescripcion.Text = "";
             txtCantidad.Text = "";
             txtPrecio.Text = "";
             txtCodigo.Text = txtConsecutivo.Text;
+            //Usamos .enable para dejar o no editar dependiendo del valor de verdad que le pasemos
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
             btnCrear.Enabled = true;
         }
+        //Creamos otro metodo para registrar la venta
         private void RegisterSale()
         {
+            //Llamamos ShowMessage desde MessageHelper para dar visibilidad del error
+            //En caso que el usuario indique una cantidad
             if (txtCantidadaVender.Text == "") { 
                 MessageHelper.ShowMessage("La cantidad a vender no puede ser 0");
                 return;
             }
-
+            //Si el  usuario no selecciona una opcion del combobox, mostramos el ErrorMessage
             if (comboProducts.SelectedValue == null)
             {
                 MessageHelper.ShowErrorMessage("Para vender debes Selecionar un producto");
                 return;
             }
+            //Instanciamos clase Sale (modelo)
             Sale sale = new()
             {
                 ProductCode = comboProducts.SelectedValue.ToString(),
@@ -118,7 +128,9 @@ namespace Caja_Registradora.Views.Modules
                 SaleDate = DateTime.Now.ToShortDateString(),
                 Description = comboProducts.Text
             };
+            //Guardamos en saleResponse el metodo SaleProduct que llamamos desde DTO
             Sale saleResponse = _saleDTO.SaleProduct(sale);
+            //Validamos que se venda el producto
             if (saleResponse.IsCorrect)
             {
                 LoadGrid();
@@ -131,7 +143,7 @@ namespace Caja_Registradora.Views.Modules
         #endregion
 
         #region Events
-
+        //Evento Load que carga los productos
         private void Products_Load(object sender, EventArgs e)
         {
             txtFecha.Text = DateTime.Now.ToShortDateString();
@@ -139,14 +151,16 @@ namespace Caja_Registradora.Views.Modules
             Dock = DockStyle.Fill;
             btnActualizar.Enabled = false;
         }
-
+        //Evento click que acciona vender
         private void BtnVender_Click(object sender, EventArgs e)
         {
+            //Llamamos RegisterSale para registrar la venta 
             RegisterSale();
         }
-
+        //Evento click que crea un producto
         private void BtnCrear_Click(object sender, EventArgs e)
         {
+            //LLamamos el evento CreateProduct el cual despues de dar click el usuario, se crea el producto
             CreateProduct();
         }
 
@@ -165,25 +179,30 @@ namespace Caja_Registradora.Views.Modules
             }
         }
         #endregion
-
+        //Evento click de informedeVentas
         private void BtnInformedeVentas_Click(object sender, EventArgs e)
         {
+            // Instanciamos salesReport
             SalesReport salesReport = new();
+            //Llamamos OpenModule con parametro salesReport
             OpenModule(salesReport);
         }
-
+        //Creamos metodo OpenModule que pone un control de tipo usercontrol(en la vista)
         private void OpenModule(SalesReport salesReport)
         {
+            //instanciamos module con parametro salesReport
             Module module = new(salesReport);
             module.ShowDialog();
         }
-
+        //Evento click de venta cuando clickeamos en el DataGrid
         private void DgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //
             string productCode = dgvProducts.SelectedRows[0].Cells[0].Value.ToString();
+            //Llamamos FillproductInfo para llenar la informacion del producto
             FillProductInfo(productCode);
         }
-
+        //Creamos metodo FillProductInfo que nos llena la informacion de cada producto en los campos de texto
         private void FillProductInfo(string productCode)
         {
             _product = _objDTO.GetProductByCode(productCode);
@@ -195,7 +214,7 @@ namespace Caja_Registradora.Views.Modules
             btnCrear.Enabled = false;
             btnEliminar.Enabled = true;
         }
-
+        //Evento click buscar 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             txtCodigo.Text = txtConsecutivo.Text;
@@ -205,13 +224,14 @@ namespace Caja_Registradora.Views.Modules
             btnCrear.Enabled = true;
             btnActualizar.Enabled = false;
         }
-
+        //Evento Clicl Actualizar 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
             string productCode = txtCodigo.Text;
             UpdateSelectedProduct(productCode);
         }
-
+        //Creamos metodo UpdateSelectedProduct que nos actualiza la informacion
+        // Cada vez que el usuario seleccione el producto, cambie alguna informacion, y accione Actualizar
         private void UpdateSelectedProduct(string productCode)
         {
             _product = _productList.Find(p => p.Code == productCode);
@@ -223,15 +243,16 @@ namespace Caja_Registradora.Views.Modules
             LoadGrid();
             ClearFields();
         }
-
+        //Evento cick Eliminar
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             string productCode = txtCodigo.Text;
             DeleteProduct(productCode);
         }
-
+        //Creamos metodo DeleteProduct 
         private void DeleteProduct(string productCode)
         {
+            //Creamos una variable de tipo bool y llamamos DeleteProduct del DTO con parametro productCode
             bool ifisDeleted = _objDTO.DeleteProduct(productCode);
             if (ifisDeleted) { 
                 MessageHelper.ShowMessage("El producto se eliminó satisfactoriamente");

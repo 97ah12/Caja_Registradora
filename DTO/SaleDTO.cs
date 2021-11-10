@@ -22,7 +22,7 @@ namespace Caja_Registradora.DTO
             _sales = new();
             product = new();
         }
-        //Creamos metodo SaleProduct de tipo Sale y como parametro sale
+        //Creamos metodo SaleProduct que nos permite vender un producto
         public Sale SaleProduct(Sale sale)
         {
             //Instanciamos saleResponse
