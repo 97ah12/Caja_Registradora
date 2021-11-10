@@ -1,23 +1,20 @@
 ﻿using Caja_Registradora.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Caja_Registradora.DAO
 {
     public class LoginDAO
     {
+        //Declaracion del campo _user es Readonly porque la instancia _user unicamente se va a crear dentro de un constructor
         readonly User _user;
-        //Este es el contruector de la Clase DAO que instancia los datos por defecro de inicio de sesion.
+        //Este es el contructor de la Clase DAO que instancia los datos por defecto de inicio de sesion.
         public LoginDAO()
         {
+            // Aca se crea la Instancia de _user
             // Esto simula un usuario y contraseña registardo desde la Base de Datos
-            _user = new() 
+            _user = new()
             {
-                UserName = "Admin",
-                Password = "1234*"
+                UserName = "A",
+                Password = "1"
             };
         }
 

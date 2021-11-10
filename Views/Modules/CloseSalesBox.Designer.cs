@@ -29,151 +29,110 @@ namespace Caja_Registradora.Views.Modules
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvClosedSales = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtConsecutivo = new System.Windows.Forms.TextBox();
             this.txtFecha = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.FECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CONSECUTIVO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL_VENTAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClosedSales)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvClosedSales
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FECHA,
-            this.CONSECUTIVO,
-            this.TOTAL_VENTAS});
-            this.dataGridView1.Location = new System.Drawing.Point(49, 154);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(429, 409);
-            this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvClosedSales.AllowUserToAddRows = false;
+            this.dgvClosedSales.AllowUserToDeleteRows = false;
+            this.dgvClosedSales.AllowUserToResizeColumns = false;
+            this.dgvClosedSales.AllowUserToResizeRows = false;
+            this.dgvClosedSales.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvClosedSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClosedSales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvClosedSales.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvClosedSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClosedSales.Location = new System.Drawing.Point(22, 67);
+            this.dgvClosedSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvClosedSales.MultiSelect = false;
+            this.dgvClosedSales.Name = "dgvClosedSales";
+            this.dgvClosedSales.ReadOnly = true;
+            this.dgvClosedSales.RowHeadersVisible = false;
+            this.dgvClosedSales.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvClosedSales.RowTemplate.Height = 29;
+            this.dgvClosedSales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClosedSales.ShowEditingIcon = false;
+            this.dgvClosedSales.Size = new System.Drawing.Size(565, 346);
+            this.dgvClosedSales.TabIndex = 7;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtConsecutivo);
             this.panel1.Controls.Add(this.txtFecha);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(14, 84);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(491, 52);
+            this.panel1.Size = new System.Drawing.Size(606, 39);
             this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // txtConsecutivo
-            // 
-            this.txtConsecutivo.Location = new System.Drawing.Point(353, 13);
-            this.txtConsecutivo.Name = "txtConsecutivo";
-            this.txtConsecutivo.Size = new System.Drawing.Size(125, 27);
-            this.txtConsecutivo.TabIndex = 3;
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(82, 13);
+            this.txtFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtFecha.Location = new System.Drawing.Point(100, 9);
+            this.txtFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(125, 27);
+            this.txtFecha.Size = new System.Drawing.Size(110, 23);
             this.txtFecha.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(240, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "CONSECUTIVO";
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 16);
+            this.label4.Location = new System.Drawing.Point(19, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 20);
+            this.label4.Size = new System.Drawing.Size(75, 15);
             this.label4.TabIndex = 0;
-            this.label4.Text = "FECHA";
+            this.label4.Text = "Fecha Actual";
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(271, 43);
+            this.label2.Location = new System.Drawing.Point(238, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 20);
+            this.label2.Size = new System.Drawing.Size(93, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "CIERRE DE CAJA";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(254, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "CAJA REGISTRADORA";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // FECHA
-            // 
-            this.FECHA.HeaderText = "FECHA";
-            this.FECHA.MinimumWidth = 6;
-            this.FECHA.Name = "FECHA";
-            this.FECHA.Width = 125;
-            // 
-            // CONSECUTIVO
-            // 
-            this.CONSECUTIVO.HeaderText = "CONSECUTIVO";
-            this.CONSECUTIVO.MinimumWidth = 6;
-            this.CONSECUTIVO.Name = "CONSECUTIVO";
-            this.CONSECUTIVO.Width = 125;
-            // 
-            // TOTAL_VENTAS
-            // 
-            this.TOTAL_VENTAS.HeaderText = "TOTAL_VENTAS";
-            this.TOTAL_VENTAS.MinimumWidth = 6;
-            this.TOTAL_VENTAS.Name = "TOTAL_VENTAS";
-            this.TOTAL_VENTAS.Width = 125;
             // 
             // CloseSalesBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.Controls.Add(this.dgvClosedSales);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CloseSalesBox";
-            this.Size = new System.Drawing.Size(517, 597);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(606, 445);
+            this.Load += new System.EventHandler(this.CloseSalesBox_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClosedSales)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvClosedSales;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtConsecutivo;
         private System.Windows.Forms.TextBox txtFecha;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CONSECUTIVO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL_VENTAS;
     }
 }

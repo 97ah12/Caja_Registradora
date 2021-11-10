@@ -1,15 +1,7 @@
-﻿using Caja_Registradora.DAO;
-using Caja_Registradora.DTO;
+﻿using Caja_Registradora.DTO;
 using Caja_Registradora.Helpers;
 using Caja_Registradora.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Caja_Registradora.Views
@@ -24,7 +16,7 @@ namespace Caja_Registradora.Views
             _loginDTO = new();
         }
 
-        public void Ingresar()
+        private void Ingresar()
         {
             try
             {
@@ -39,8 +31,9 @@ namespace Caja_Registradora.Views
                 {
                     Main main = new();
                     MessageHelper.ShowMessage("Bienvenido a Caja Registradora");
+                    Hide();
                     user.IsLoggedIn = true;
-                    main.Show();
+                    main.ShowDialog();
                     Close();
                 }
                 else
@@ -59,4 +52,3 @@ namespace Caja_Registradora.Views
         }
     }
 }
- 

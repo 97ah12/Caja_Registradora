@@ -40,18 +40,25 @@ namespace Caja_Registradora.Views
             // 
             // btnLogin
             // 
+            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogin.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnLogin.Location = new System.Drawing.Point(150, 237);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(82, 22);
+            this.btnLogin.Size = new System.Drawing.Size(82, 27);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.TabStop = false;
             this.btnLogin.Text = "INICIAR";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsuario.Location = new System.Drawing.Point(140, 139);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsuario.Name = "txtUsuario";
@@ -60,6 +67,8 @@ namespace Caja_Registradora.Views
             // 
             // txtContrasena
             // 
+            this.txtContrasena.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtContrasena.Location = new System.Drawing.Point(140, 196);
             this.txtContrasena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContrasena.Name = "txtContrasena";
@@ -69,6 +78,8 @@ namespace Caja_Registradora.Views
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(140, 122);
             this.label1.Name = "label1";
@@ -78,15 +89,19 @@ namespace Caja_Registradora.Views
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(140, 179);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 15);
+            this.label2.Size = new System.Drawing.Size(83, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "CONTRASEÑA";
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Caja_Registradora.Properties.Resources.login_image;
             this.pictureBox1.Location = new System.Drawing.Point(140, 25);
             this.pictureBox1.Name = "pictureBox1";
@@ -99,7 +114,7 @@ namespace Caja_Registradora.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(370, 284);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
